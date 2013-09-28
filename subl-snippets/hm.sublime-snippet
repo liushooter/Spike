@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[has_many ]]></content>
+    <tabTrigger>hm</tabTrigger>
+    <scope>source.ruby</scope>
+    <description>hm</description>
+</snippet>
