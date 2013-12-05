@@ -1,0 +1,7 @@
+<snippet>
+    <content><![CDATA[\$(document).ready(function($1));]]></content>
+    <tabTrigger>ready</tabTrigger>
+    <scope>source.js,text.html.ruby</scope>
+    <scope></scope>
+    <description>js_ready</description>
+</snippet>
