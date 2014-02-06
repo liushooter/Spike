@@ -6,12 +6,22 @@
   cm = commit -m
   st = status
   br = branch
-  oneline = log --pretty=oneline --since='2 days ago'
   onelog = log -p -1
+  timelog = log --pretty=format:'%Cred%h%Creset - %C(yellow)%an%Creset - %Cgreen%cd%Creset - %s%Creset' --abbrev-commit --date=iso
 [color]
   diff = auto
   status = auto
   branch = auto
   ui = auto
 [core]
-  editor = vim
+   editor = vim
+   excludesfile = ~/.gitignore_global
+[diff]
+  prompt = true
+  tool = vimdiff
+[merge]
+  tool = vimdiff
+[mergetool]
+  keepBackup = true
+[push]
+  default = upstream
