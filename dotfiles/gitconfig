@@ -6,7 +6,7 @@
   ci = commit -a -v
   st = status
   br = branch
-  onelog = log -p -1
+  mod = commit --amend
   timelog = log --pretty=format:'%Cred%h%Creset - %C(yellow)%an%Creset - %Cgreen%cd%Creset - %s%Creset' --abbrev-commit --date=iso
 [color]
   diff = auto

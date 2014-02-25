@@ -7,6 +7,7 @@ alias rr="rake routes"
 alias rds="rake db:seed"
 alias rdm="rake db:migrate"
 alias rdr="rake db:rollback"
+alias rtc="rake tmp:clear"
 
 # system alias
 
