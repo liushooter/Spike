@@ -3,6 +3,7 @@ alias g="git"
 
 # rails alias
 alias rs="rails s"
+alias rc="rails c"
 alias rr="rake routes"
 alias rds="rake db:seed"
 alias rdm="rake db:migrate"
