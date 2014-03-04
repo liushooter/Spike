@@ -10,8 +10,8 @@ alias rdd="rake db:drop"
 alias rdc="rake db:create"
 alias rdm="rake db:migrate"
 alias rdr="rake db:rollback"
+alias rds="rake db:schema:load"
 alias rtc="rake tmp:clear"
 
 # system alias
-
 alias ll="ls -l -h"
