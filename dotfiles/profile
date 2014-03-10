@@ -16,3 +16,4 @@ alias rtc="rake tmp:clear"
 # system alias
 alias ll="ls -l -h"
 alias es="elasticsearch"
+alias ="who"
