@@ -14,6 +14,9 @@ alias rds="rake db:schema:load"
 alias rtc="rake tmp:clear"
 
 # system alias
-alias ll="ls -l -h"
-alias es="elasticsearch"
 alias ="who"
+alias ll="ls -l -h"
+alias ip="ifconfig |grep inet"
+
+# seerver alias
+alias es="elasticsearch"
