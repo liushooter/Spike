@@ -17,6 +17,7 @@ alias rtc="rake tmp:clear"
 alias ="who"
 alias ll="ls -l -h"
 alias ip="ifconfig |grep inet"
+alias trash="sudo periodic daily weekly monthly"
 
-# seerver alias
+# server alias
 alias es="elasticsearch"
