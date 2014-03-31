@@ -24,3 +24,6 @@ alias trash="sudo periodic daily weekly monthly"
 alias es="elasticsearch"
 
 alias -s gz="tar -xzvf"
+
+# alias Sublime
+alias subl='open -a "Sublime Text 2"'
