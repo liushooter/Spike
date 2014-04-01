@@ -2,8 +2,7 @@
 alias g="git"
 
 # rails alias
-alias rs="rails s"
-alias rc="rails c"
+alias r="rails"
 alias rr="bundle exec rake routes"
 alias rds="bundle exec rake db:seed"
 alias rdd="bundle exec rake db:drop"
