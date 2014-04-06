@@ -18,6 +18,8 @@ alias ="who"
 alias ll="ls -l -h"
 alias ip="ifconfig |grep inet"
 alias trash="sudo periodic daily weekly monthly"
+alias hiddenfile="defaults write com.apple.finder AppleShowAllFiles -bool false"
+alias displayfile="defaults write com.apple.finder AppleShowAllFiles -bool true"
 
 # server alias
 alias es="elasticsearch"
