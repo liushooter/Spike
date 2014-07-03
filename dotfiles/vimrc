@@ -1,0 +1,3 @@
+
+Bundle 'gmarik/vundle'
+Bundel 'vim-fugitive'

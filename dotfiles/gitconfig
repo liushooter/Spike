@@ -3,7 +3,7 @@
   email = shooter.hero@gmail.com
 [alias]
   co = checkout
-  ci = commit -a -v
+  ci = commit -m
   st = status
   br = branch
   mod = commit --amend
