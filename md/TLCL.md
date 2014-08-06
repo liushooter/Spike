@@ -76,6 +76,11 @@ sudo adduser <username> sudo
 
 `sudo apt-get install mongodb`
 
+`sudo apt-get update`
+
+`sudo apt-get dist-upgrade`
+
+`sudo  apt-get install libssl-dev`
 ***
 
 
