@@ -54,7 +54,7 @@ usermod –G peter peter （强制删除该用户的主目录和主目录下的�
 
 [http://askubuntu.com/questions/7477/how-can-i-add-a-new-user-as-sudoer-using-the-command-line](http://askubuntu.com/questions/7477/how-can-i-add-a-new-user-as-sudoer-using-the-command-line)
 
-sudo adduser <username> sudo
+sudo adduser `<username>` sudo
 
 ***
 
