@@ -9,7 +9,7 @@
   mod = commit --amend
   tlog = log --pretty=format:'%Cred%h%Creset - %C(yellow)%an%Creset - %Cgreen%cd%Creset - %s%Creset' --abbrev-commit --date=iso
   tree = log --graph --decorate --pretty=oneline --abbrev-commit
-  callback = reset --soft HEAD^
+  rollback = reset --soft HEAD^
 [color]
   diff = auto
   status = auto
