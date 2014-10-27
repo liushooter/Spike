@@ -1,0 +1,3 @@
+.DS_Store
+
+# git config --global core.excludesfile ~/.gitignore_globa
