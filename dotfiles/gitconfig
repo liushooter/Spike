@@ -17,7 +17,7 @@
   ui = auto
 [core]
   editor = vim
-  excludesfile = ~/.gitignore
+  excludesfile = ~/.gitignore_global
 [diff]
   prompt = true
   tool = vimdiff
