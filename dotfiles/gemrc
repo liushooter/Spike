@@ -1,1 +1,1 @@
-gem: --no-ri --no-rdoc
+gem: -V --no-ri --no-rdoc
