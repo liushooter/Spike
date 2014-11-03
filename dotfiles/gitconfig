@@ -6,10 +6,11 @@
   ci = commit -m
   st = status
   br = branch
-  mod = commit --amend
+  amend = commit --amend
+  rollback = reset --soft HEAD^
   tlog = log --pretty=format:'%Cred%h%Creset - %C(yellow)%an%Creset - %Cgreen%cd%Creset - %s%Creset' --abbrev-commit --date=iso
   tree = log --graph --decorate --pretty=oneline --abbrev-commit
-  rollback = reset --soft HEAD^
+  line = log --pretty=oneline
 [color]
   diff = auto
   status = auto
