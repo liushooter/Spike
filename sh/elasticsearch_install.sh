@@ -8,5 +8,7 @@ sudo sh -c "echo 'deb http://packages.elasticsearch.org/elasticsearch/1.3/debian
 
 sudo apt-get update && sudo apt-get install elasticsearch
 
+sudo service elasticsearch start
+
 # http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/setup-repositories.html
 # http://stackoverflow.com/questions/1584066/append-to-etc-apt-sources-list
