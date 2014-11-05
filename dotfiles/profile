@@ -1,3 +1,5 @@
+alias py="python"
+
 # git alias
 alias g="git"
 
