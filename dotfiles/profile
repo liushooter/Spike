@@ -32,3 +32,6 @@ alias -s gz="tar -xzvf"
 
 # alias Sublime
 alias subl='open -a "Sublime Text 2"'
+
+
+alias shutdown=shut
