@@ -24,7 +24,6 @@
   tool = vimdiff
 [merge]
   tool = vimdiff
-	ff = false
 [mergetool]
   keepBackup = true
 [push]
