@@ -1,6 +1,6 @@
 sudo apt-get update
 
-sudo apt-get install libpq-dev postgresql
+sudo apt-get install -y software-properties-common
 
 # sudo -u postgres createuser --superuser <username> #创建用户
 

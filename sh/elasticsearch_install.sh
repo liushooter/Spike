@@ -1,12 +1,10 @@
-cd ~
-
-sudo apt-get update && sudo apt-get install openjdk-7-jre-headless -y
+sudo apt-get update && sudo apt-get install -y openjdk-7-jre-headless
 
 wget -qO - http://packages.elasticsearch.org/GPG-KEY-elasticsearch | sudo apt-key add -
 
 sudo sh -c "echo 'deb http://packages.elasticsearch.org/elasticsearch/1.3/debian stable main' >> /etc/apt/sources.list"
 
-sudo apt-get update && sudo apt-get install elasticsearch
+sudo apt-get update && sudo apt-get install -y elasticsearch
 
 sudo service elasticsearch start
 
