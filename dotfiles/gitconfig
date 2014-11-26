@@ -2,6 +2,7 @@
   name = shooter
   email = shooter.hero@gmail.com
 [alias]
+  cl = clone
   mr = merge
   co = checkout
   ci = commit -m
@@ -9,9 +10,9 @@
   br = branch
   amend = commit --amend
   rollback = reset --soft HEAD^
-  tlog = log --pretty=format:'%Cred%h%Creset - %C(yellow)%an%Creset - %Cgreen%cd%Creset - %s%Creset' --abbrev-commit --date=iso
-  tree = log --graph --decorate --pretty=oneline --abbrev-commit
   line = log --pretty=oneline
+  tree = log --graph --decorate --pretty=oneline --abbrev-commit
+  tlog = log --pretty=format:'%Cred%h%Creset - %C(yellow)%an%Creset - %Cgreen%cd%Creset - %s%Creset' --abbrev-commit --date=iso
 [color]
   diff = auto
   status = auto
