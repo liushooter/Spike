@@ -1,9 +1,8 @@
+alias .="source"
+alias g="git"
+alias rb="ruby"
 alias py="python"
 
-# git alias
-alias g="git"
-
-# rails alias
 alias r="rails"
 alias rr="bundle exec rake routes"
 alias rds="bundle exec rake db:seed"
