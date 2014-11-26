@@ -2,6 +2,7 @@
   name = shooter
   email = shooter.hero@gmail.com
 [alias]
+  mr = merge
   co = checkout
   ci = commit -m
   st = status
