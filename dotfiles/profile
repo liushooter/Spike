@@ -14,7 +14,7 @@ alias rds="bundle exec rake db:schema:load"
 alias rtc="bundle exec rake tmp:clear"
 alias precompile="bundle exec rake assets:precompile RAILS_ENV=production"
 
-alias minad="mina deploy"
+alias minad="mina deploy --verbose"
 
 # system alias
 alias ="who"
