@@ -34,3 +34,5 @@ alias subl='open -a "Sublime Text 2"'
 
 
 alias shutdown=shut
+
+bindkey \^U backward-kill-line #zsh ctrl-u not work
