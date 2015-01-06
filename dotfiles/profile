@@ -16,15 +16,6 @@ alias precompile="bundle exec rake assets:precompile RAILS_ENV=production"
 
 alias minad="mina deploy --verbose"
 
-# system alias
-alias ="who"
-alias ll="ls -l -h"
-alias ip="ifconfig |grep inet"
-alias trash="sudo periodic daily weekly monthly"
-alias hiddenfile="defaults write com.apple.finder AppleShowAllFiles -bool false"
-alias displayfile="defaults write com.apple.finder AppleShowAllFiles -bool true"
-
-# server alias
 alias es="elasticsearch"
 
 alias -s gz="tar -xzvf"
@@ -32,7 +23,15 @@ alias -s gz="tar -xzvf"
 # alias Sublime
 alias subl='open -a "Sublime Text 2"'
 
-
-alias shutdown=shut
-
+# bindkey
 bindkey \^U backward-kill-line #zsh ctrl-u not work
+
+# system alias
+alias ="who"
+alias ll="ls -l -h"
+alias ip="ifconfig |grep inet"
+alias trash="sudo periodic daily weekly monthly"
+alias hiddenfile="defaults write com.apple.finder AppleShowAllFiles -bool false"
+alias displayfile="defaults write com.apple.finder AppleShowAllFiles -bool true"
+alias current_time="echo `date '+%Y-%m-%d %H:%M:%S'`"
+alias cp_ssh_pub="[[ -f ~/.ssh/id_rsa.pub ]] && cat ~/.ssh/id_rsa.pub | pbcopy && echo 'id_rsa.pub cp ok' "
