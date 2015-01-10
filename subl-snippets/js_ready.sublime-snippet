@@ -3,5 +3,5 @@
     <tabTrigger>ready</tabTrigger>
     <scope>source.js,text.html.ruby</scope>
     <scope></scope>
-    <description>js_ready</description>
+    <description>document.ready</description>
 </snippet>

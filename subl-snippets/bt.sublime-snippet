@@ -2,5 +2,5 @@
     <content><![CDATA[belongs_to ]]></content>
     <tabTrigger>bt</tabTrigger>
     <scope>source.ruby</scope>
-    <description>bt</description>
+    <description>belongs_to</description>
 </snippet>

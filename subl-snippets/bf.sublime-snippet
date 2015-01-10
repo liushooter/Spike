@@ -1,6 +1,6 @@
 <snippet>
-    <content><![CDATA[before_filter ]]></content>
+    <content><![CDATA[before_action ]]></content>
     <tabTrigger>bf</tabTrigger>
     <scope>source.ruby</scope>
-    <description>bf</description>
+    <description>before_action</description>
 </snippet>

@@ -2,7 +2,7 @@
     <content><![CDATA[<%= javascript_include_tag "$0" %>]]></content>
     <tabTrigger>jtag</tabTrigger>
     <scope>text.html.ruby</scope>
-    <description>jtag</description>
+    <description>javascript_include_tag</description>
 </snippet>
 
 

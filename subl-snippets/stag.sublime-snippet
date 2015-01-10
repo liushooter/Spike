@@ -2,5 +2,5 @@
     <content><![CDATA[<%= stylesheet_link_tag "$0" %>]]></content>
     <tabTrigger>stag</tabTrigger>
     <scope>text.html.ruby</scope>
-    <description>stag</description>
+    <description>stylesheet_link_tag</description>
 </snippet>

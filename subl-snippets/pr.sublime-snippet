@@ -2,5 +2,5 @@
     <content><![CDATA[params[$0]]]></content>
     <tabTrigger>pr</tabTrigger>
     <scope>source.ruby</scope>
-    <description>pr</description>
+    <description>params</description>
 </snippet>

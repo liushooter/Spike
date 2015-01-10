@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[after_action ]]></content>
+    <tabTrigger>af</tabTrigger>
+    <scope>source.ruby</scope>
+    <description>after_action</description>
+</snippet>
