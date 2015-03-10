@@ -11,8 +11,10 @@
   amend = commit --amend
   rollback = reset --soft HEAD^
   line = log --pretty=oneline
+  count = rev-list --count HEAD
   tree = log --graph --decorate --pretty=oneline --abbrev-commit
   tlog = log --pretty=format:'%Cred%h%Creset - %C(yellow)%an%Creset - %Cgreen%cd%Creset - %s%Creset' --abbrev-commit --date=iso
+
 [color]
   diff = auto
   status = auto
@@ -34,3 +36,7 @@
 	required = true
 	clean = git media clean %f
 	smudge = git media smudge %f
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
