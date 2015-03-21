@@ -26,6 +26,9 @@ alias subl='open -a "Sublime Text 2"'
 # bindkey
 bindkey \^U backward-kill-line #zsh ctrl-u not work
 
+# python SimpleHTTPServer
+alias pyHttp="python -m SimpleHTTPServer"
+
 # system alias
 alias ="who"
 alias ll="ls -l -h"
