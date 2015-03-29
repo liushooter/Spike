@@ -14,14 +14,12 @@ alias rds="bundle exec rake db:schema:load"
 alias rtc="bundle exec rake tmp:clear"
 alias precompile="bundle exec rake assets:precompile RAILS_ENV=production"
 
-alias minad="mina deploy --verbose"
-
 alias es="elasticsearch"
 
 alias -s gz="tar -xzvf"
 
 # alias Sublime
-alias subl='open -a "Sublime Text 2"'
+alias subl='open -a "Sublime Text"'
 
 # bindkey
 bindkey \^U backward-kill-line #zsh ctrl-u not work
@@ -30,7 +28,6 @@ bindkey \^U backward-kill-line #zsh ctrl-u not work
 alias pyHttp="python -m SimpleHTTPServer"
 
 # system alias
-alias ="who"
 alias ll="ls -l -h"
 alias ip="ifconfig |grep inet"
 alias trash="sudo periodic daily weekly monthly"
