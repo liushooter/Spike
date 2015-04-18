@@ -25,8 +25,8 @@ alias subl='open -a "Sublime Text"'
 # bindkey
 bindkey \^U backward-kill-line #zsh ctrl-u not work
 
-# python SimpleHTTPServer
-alias pyHttp="python -m SimpleHTTPServer"
+#alias server='ruby -run -e httpd . -b127.0.0.1 -p3000'
+alias server="python -m SimpleHTTPServer"
 
 # system alias
 alias ll="ls -l -h"
