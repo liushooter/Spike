@@ -9,6 +9,7 @@
   st = status
   br = branch
   amend = commit --amend
+  undo  = reset HEAD
   rollback = reset --soft HEAD^
   line = log --pretty=oneline
   count = rev-list --count HEAD
@@ -39,4 +40,8 @@
 [filter "hawser"]
 	clean = git hawser clean %f
 	smudge = git hawser smudge %f
+	required = true
+[filter "lfs"]
+	clean = git lfs clean %f
+	smudge = git lfs smudge %f
 	required = true
