@@ -2,20 +2,25 @@
   name = shooter
   email = shooter.hero@gmail.com
 [alias]
+  df = diff --word-diff
   cl = clone
   mr = merge
   co = checkout
   ci = commit -m
   st = status
   br = branch
-  amend = commit --amend
-  undo  = reset HEAD
+  cp = cherry-pick
+  up = commit --amend
+  zqw = reset --hard @{u} #git reset --hard origin/<br-name>
+  chs = "!git checkout $1 && git status"
+  unstage = reset HEAD
   rollback = reset --soft HEAD^
+  undo = "!git reset --soft HEAD^ && git reset HEAD"
   line = log --pretty=oneline
-  count = rev-list --count HEAD
   tree = log --graph --decorate --pretty=oneline --abbrev-commit
   tlog = log --pretty=format:'%Cred%h%Creset - %C(yellow)%an%Creset - %Cgreen%cd%Creset - %s%Creset' --abbrev-commit --date=iso
-
+  count = rev-list --count HEAD
+  brname = rev-parse --abbrev-ref HEAD
 [color]
   diff = auto
   status = auto
