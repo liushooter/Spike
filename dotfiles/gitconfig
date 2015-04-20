@@ -2,6 +2,7 @@
   name = shooter
   email = shooter.hero@gmail.com
 [alias]
+  d = difftool
   df = diff --word-diff
   cl = clone
   mr = merge
@@ -30,7 +31,7 @@
   editor = vim
   excludesfile = ~/.gitignore_global
 [diff]
-  prompt = true
+  prompt = false
   tool = vimdiff
 [merge]
   tool = vimdiff
@@ -39,14 +40,14 @@
 [push]
   default = upstream
 [filter "media"]
-	required = true
-	clean = git media clean %f
-	smudge = git media smudge %f
+  required = true
+  clean = git media clean %f
+  smudge = git media smudge %f
 [filter "hawser"]
-	clean = git hawser clean %f
-	smudge = git hawser smudge %f
-	required = true
+  clean = git hawser clean %f
+  smudge = git hawser smudge %f
+  required = true
 [filter "lfs"]
-	clean = git lfs clean %f
-	smudge = git lfs smudge %f
-	required = true
+  clean = git lfs clean %f
+  smudge = git lfs smudge %f
+  required = true
