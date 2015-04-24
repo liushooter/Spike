@@ -31,6 +31,7 @@ alias server="python -m SimpleHTTPServer"
 # system alias
 alias ll="ls -l -h"
 alias ip="ifconfig |grep inet"
+alias outside_ip="curl ifconfig.me"
 alias trash="sudo periodic daily weekly monthly"
 alias hiddenfile="defaults write com.apple.finder AppleShowAllFiles -bool false"
 alias displayfile="defaults write com.apple.finder AppleShowAllFiles -bool true"
