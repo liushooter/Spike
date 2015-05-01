@@ -2,6 +2,7 @@ alias .="source"
 alias g="git"
 alias rb="ruby"
 alias py="python"
+alias grep="ag"
 
 alias r="rails"
 alias rr="bundle exec rake routes"
