@@ -12,7 +12,7 @@
   br = branch
   cp = cherry-pick
   up = commit --amend
-  zqw = reset --hard @{u} #git reset --hard origin/<br-name>
+  sos= reset --hard @{u} #git reset --hard origin/<br-name>
   chs = "!git checkout $1 && git status"
   unstage = reset HEAD
   rollback = reset --soft HEAD^
@@ -22,6 +22,8 @@
   tlog = log --pretty=format:'%Cred%h%Creset - %C(yellow)%an%Creset - %Cgreen%cd%Creset - %s%Creset' --abbrev-commit --date=iso
   count = rev-list --count HEAD
   brname = rev-parse --abbrev-ref HEAD
+  rm-lists = ls-files --deleted
+  rm-all= "!git rm $(git ls-files --deleted)"
 [color]
   diff = auto
   status = auto
