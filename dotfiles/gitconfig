@@ -24,6 +24,8 @@
   brname = rev-parse --abbrev-ref HEAD
   rm-lists = ls-files --deleted
   rm-all= "!git rm $(git ls-files --deleted)"
+  flog = log  -p -1
+
 [color]
   diff = auto
   status = auto
