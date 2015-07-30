@@ -5,6 +5,7 @@
   d = difftool
   df = diff --word-diff
   cl = clone
+  bl = blame --pretty=format:"%h"
   mr = merge
   co = checkout
   ci = commit -m
@@ -27,10 +28,10 @@
   flog = log  -p -1
 
 [color]
+  ui = auto
   diff = auto
   status = auto
   branch = auto
-  ui = auto
 [core]
   editor = vim
   excludesfile = ~/.gitignore_global
