@@ -1,0 +1,3 @@
+--skip-bundle #skips bundle install on generating a new rails app
+--database=mysql #defaults my development database to MySQL
+--template=~/.template.rb
