@@ -1,4 +1,6 @@
 require 'hirb'
 require 'active_record'
+require 'awesome_print'
+AwesomePrint.irb!
 Hirb.enable
 ActiveRecord::Base.logger = Logger.new(STDOUT)
