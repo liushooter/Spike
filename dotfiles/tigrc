@@ -4,7 +4,7 @@ set horizontal-scroll = 33%     # Scroll 33% of the view width
 set blame-options = -C -C -C    # Blame lines from other files
 
 # Wrap branch names with () and tags with <>
-set reference-format = (branch) <tag>
+# set reference-format = (branch) <tag>
 
 # Configure blame view columns using command spanning multiple lines.
 set main-view = \
