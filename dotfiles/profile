@@ -12,6 +12,7 @@ alias rds="bundle exec rake db:seed"
 alias rdd="bundle exec rake db:drop"
 alias rdc="bundle exec rake db:create"
 alias rdm="bundle exec rake db:migrate"
+alias rauto="bundle exec rake db:auto:migrate" # https://github.com/yzhang/auto_migrations_rails4
 alias rdr="bundle exec rake db:rollback"
 alias rds="bundle exec rake db:schema:load"
 alias rtc="bundle exec rake tmp:clear"
