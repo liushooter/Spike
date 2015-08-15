@@ -1,0 +1,8 @@
+[
+  { "keys": ["shift+tab"], "command" : "reindent", "args":{ "single_line": false}}
+]
+
+
+// sublime.log_commands(True)
+// command: reindent {"single_line": false}
+// vim ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Default\ \(OSX\).sublime-keymap
