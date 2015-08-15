@@ -11,6 +11,7 @@
   ci = commit -m
   st = status
   br = branch
+  squash = "!f(){ git reset --soft HEAD~${1} && git commit --edit -m\"$(git log --format=%B --reverse HEAD..HEAD@{1})\"; };f"
   cp = cherry-pick
   up = commit --amend
   sos= reset --hard @{u} #git reset --hard origin/<br-name>
