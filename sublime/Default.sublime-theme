@@ -1,0 +1,14 @@
+[
+/* 侧边栏和文件标签的字体都太小了，调整一下。*/
+    {
+        "class": "sidebar_label",
+        "font.size": 15
+    },
+
+    {
+        "class": "tab_label",
+        "font.size" : 13,
+    },
+]
+
+// vim ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Default.sublime-theme
