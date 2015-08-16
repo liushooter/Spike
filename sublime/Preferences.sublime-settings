@@ -8,6 +8,8 @@
   "close_windows_when_empty": true,
   "default_encoding": "UTF-8",
   "font_size": 16.0,
+  "line_padding_bottom": 7,
+  "line_padding_top": 7,
   // 突出显示当前光标所在的行
   "highlight_line": true,
   "remember_open_files": true,
@@ -25,3 +27,5 @@
   "folder_exclude_patterns": [".svn", ".git", ".hg", "CVS", ".meteor"], //搜索时 忽略文件夹
   "ignored_packages": [] //vim模式
 }
+
+// vim ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings
