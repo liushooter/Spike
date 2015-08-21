@@ -22,6 +22,7 @@
   line = log --pretty=oneline
   tree = log --graph --decorate --pretty=oneline --abbrev-commit
   tlog = log --pretty=format:'%Cred%h%Creset - %C(yellow)%an%Creset - %Cgreen%cd%Creset - %s%Creset' --abbrev-commit --date=iso
+  revlog = log --pretty=format:'%Cred%h%Creset - %C(yellow)%an%Creset - %Cgreen%cd%Creset - %s%Creset' --abbrev-commit --date=iso --reverse
   count = rev-list --count HEAD
   brname = rev-parse --abbrev-ref HEAD
   rm-lists = ls-files --deleted
