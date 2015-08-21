@@ -11,23 +11,24 @@
   ci = commit -m
   st = status
   br = branch
-  squash = "!f(){ git reset --soft HEAD~${1} && git commit --edit -m\"$(git log --format=%B --reverse HEAD..HEAD@{1})\"; };f"
   cp = cherry-pick
-  up = commit --amend
-  sos= reset --hard @{u} #git reset --hard origin/<br-name>
+  try = commit --amend
+  sos = reset --hard @{u} #git reset --hard origin/<br-name>
   chs = "!git checkout $1 && git status"
   unstage = reset HEAD
   rollback = reset --soft HEAD^
   undo = "!git reset --soft HEAD^ && git reset HEAD"
   line = log --pretty=oneline
   tree = log --graph --decorate --pretty=oneline --abbrev-commit
-  tlog = log --pretty=format:'%Cred%h%Creset - %C(yellow)%an%Creset - %Cgreen%cd%Creset - %s%Creset' --abbrev-commit --date=iso
   count = rev-list --count HEAD
   brname = rev-parse --abbrev-ref HEAD
   rm-lists = ls-files --deleted
-  rm-all= "!git rm $(git ls-files --deleted)"
-  flog = log  -p -1
-
+  rm-all = "!git rm $(git ls-files --deleted)"
+  flog = log -p -1
+  revlog = log --pretty=format:'%Cred%h%Creset - %C(yellow)%an%Creset - %Cgreen%cd%Creset - %s%Creset' --abbrev-commit --date=iso --reverse
+  copy = "!git log -1 --pretty=%B | pbcopy"
+  tlog = log --pretty=format:'%Cred%h%Creset - %C(yellow)%an%Creset - %Cgreen%cd%Creset - %s%Creset' --abbrev-commit --date=iso
+  squash = "!f(){ git reset --soft HEAD~${1} && git commit --edit -m\"$(git log --format=%B --reverse HEAD..HEAD@{1})\"; };f"
 [color]
   ui = auto
   diff = auto
