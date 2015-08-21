@@ -1,5 +1,5 @@
-gem: -V -​-no-document --no-ri --no-rdoc
+gem: -V --no-document --no-ri --no-rdoc
 
 # Deprecated Options:
-# -​-[no-]rdoc - Generate RDoc for installed gems Use -​-document instead
-# -​-[no-]ri - Generate ri data for installed gems. Use -​-document instead
+# --[no-]rdoc - Generate RDoc for installed gems Use --document instead
+# --[no-]ri - Generate ri data for installed gems. Use --document instead
