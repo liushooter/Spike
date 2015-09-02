@@ -9,7 +9,7 @@
   mr = merge
   co = checkout
   ci = commit -m
-  st = status
+  st = status -s
   br = branch
   cp = cherry-pick
   try = commit --amend
