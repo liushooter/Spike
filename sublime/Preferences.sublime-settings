@@ -24,6 +24,10 @@
   "show_full_path": true, // 显示全路径
   "scroll_past_end": true,
   "word_wrap": false, // 自动换行
+  "line_numbers": true,  // 是否显示行号
+  "gutter": true, // 是否显示行号边栏
+  "margin": 4, // 行号边栏和文字的间距
+  "caret_style": "smooth",  // 设置光标闪动方式
   "folder_exclude_patterns": [".svn", ".git", ".hg", "CVS", ".meteor"], //搜索时 忽略文件夹
   "ignored_packages": [] //vim模式
 }
