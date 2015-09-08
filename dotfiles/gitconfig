@@ -3,6 +3,7 @@
   email = shooter.hero@gmail.com
 [alias]
   d = difftool
+  bi = bisect
   df = diff --word-diff
   cl = clone
   bl = blame --pretty=format:"%h"
