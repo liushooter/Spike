@@ -23,6 +23,8 @@
   tree = log --graph --decorate --pretty=oneline --abbrev-commit
   count = rev-list --count HEAD
   brname = rev-parse --abbrev-ref HEAD
+  fuck = commit --allow-empty-message -m ''
+  sweep = clean -df
   rm-lists = ls-files --deleted
   rm-all = "!git rm $(git ls-files --deleted)"
   flog = log -p -1
