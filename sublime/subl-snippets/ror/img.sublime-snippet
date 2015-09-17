@@ -2,5 +2,5 @@
     <content><![CDATA[<%= image_tag "$1" %>]]></content>
     <tabTrigger>%i</tabTrigger>
     <scope>text.html.ruby</scope>
-    <description>%i</description>
+    <description>image</description>
 </snippet>

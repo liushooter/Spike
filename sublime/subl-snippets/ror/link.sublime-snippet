@@ -2,5 +2,5 @@
     <content><![CDATA[<%= link_to "$1",$2 %>]]></content>
     <tabTrigger>%l</tabTrigger>
     <scope>text.html.ruby</scope>
-    <description>%l</description>
+    <description>link</description>
 </snippet>
