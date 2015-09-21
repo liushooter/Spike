@@ -1,0 +1,1 @@
+if [ -f ~/.bashrc ]; then . ~/.bashrc; fi #http://stackoverflow.com/a/7780062/1240067

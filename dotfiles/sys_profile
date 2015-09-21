@@ -18,6 +18,7 @@ alias rds="bundle exec rake db:schema:load"
 alias rtc="bundle exec rake tmp:clear"
 alias precompile="bundle exec rake assets:precompile RAILS_ENV=production"
 alias rsp="bundle exec rspec"
+alias rackup="bundle exec rackup"
 
 alias es="elasticsearch"
 alias redis="redis-server"
