@@ -35,7 +35,6 @@ bindkey \^U backward-kill-line #zsh ctrl-u not work
 alias server="python -m SimpleHTTPServer"
 
 # system alias
-alias ll="ls -l -h"
 alias ip="ifconfig |grep inet"
 alias outside_ip="curl ifconfig.me"
 alias trash="sudo periodic daily weekly monthly"
