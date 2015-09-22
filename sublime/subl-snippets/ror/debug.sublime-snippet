@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[Rails.logger.info "$1" * $2]]></content>
+    <tabTrigger>logger</tabTrigger>
+    <scope>source.ruby</scope>
+    <description>debug</description>
+</snippet>
