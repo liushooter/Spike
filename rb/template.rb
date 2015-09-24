@@ -68,6 +68,7 @@ run "cat << EOF >> .gitignore
 /db/*.sqlite3
 /db/*.sqlite3-journal
 /log/*.log
+/public/assets/
 /tmp
 /config/database.yml
 /config/secrets.yml
