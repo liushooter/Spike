@@ -44,6 +44,7 @@ gem_group :development, :test do
   gem 'binding_of_caller'
 end
 
+gem 'mysql2', '~> 0.3.18'
 gem 'puma'
 gem 'kaminari'
 gem 'colorize'
