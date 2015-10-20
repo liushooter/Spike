@@ -1,4 +1,4 @@
-sudo apt-get update && sudo apt-get install -y openjdk-7-jre-headless
+sudo apt-get -qq update && sudo apt-get install -qqy openjdk-7-jre-headless
 
 wget -qO - http://packages.elasticsearch.org/GPG-KEY-elasticsearch | sudo apt-key add -
 
