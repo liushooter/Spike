@@ -42,3 +42,5 @@ alias hiddenfile="defaults write com.apple.finder AppleShowAllFiles -bool false"
 alias displayfile="defaults write com.apple.finder AppleShowAllFiles -bool true"
 alias curr_time="date '+%Y-%m-%d %H:%M:%S' "
 alias cp_ssh_pub="[[ -f ~/.ssh/id_rsa.pub ]] && cat ~/.ssh/id_rsa.pub | pbcopy && echo 'id_rsa.pub cp ok' "
+
+export PAGER=most # http://unix.stackexchange.com/a/507
