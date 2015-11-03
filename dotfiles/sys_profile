@@ -4,6 +4,7 @@ alias rb="ruby"
 alias py="python"
 #alias grep="ag"
 alias ack="ag"
+alias cdiff="colordiff" # http://www.colordiff.org/
 
 alias r="bundle exec rails"
 alias rsb="bundle exec rails s -b 127.0.0.1"
