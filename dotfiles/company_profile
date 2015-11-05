@@ -1,0 +1,5 @@
+export PATH="$PATH:~/company/arcanist/bin/"
+
+# https://phabricator.com/
+# https://github.com/phacility/libphutil
+# https://github.com/phacility/arcanist
