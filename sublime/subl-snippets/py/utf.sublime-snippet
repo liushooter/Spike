@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[# -*- encoding: utf-8 -*-]]></content>
+    <tabTrigger>utf</tabTrigger>
+    <scope>source.python</scope>
+    <description>utf</description>
+</snippet>
