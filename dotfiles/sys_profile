@@ -33,7 +33,7 @@ alias subl='open -a "Sublime Text"'
 bindkey \^U backward-kill-line #zsh ctrl-u not work
 
 #alias server='ruby -run -e httpd . -b127.0.0.1 -p3000'
-alias server="python -m SimpleHTTPServer"
+alias server="python -m SimpleHTTPServer 8888"
 
 # system alias
 alias ip="ifconfig |grep inet"
