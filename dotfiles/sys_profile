@@ -1,3 +1,5 @@
+export EDITOR=vim
+
 alias .="source"
 alias g="git"
 alias rb="ruby"
