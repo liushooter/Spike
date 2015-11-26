@@ -1,4 +1,6 @@
 export EDITOR=vim
+export LANG=en_US.UTF-8 #py
+export PAGER=most # http://unix.stackexchange.com/a/507
 
 alias .="source"
 alias g="git"
@@ -45,8 +47,6 @@ alias hiddenfile="defaults write com.apple.finder AppleShowAllFiles -bool false"
 alias displayfile="defaults write com.apple.finder AppleShowAllFiles -bool true"
 alias curr_time="date '+%Y-%m-%d %H:%M:%S' "
 alias cp_ssh_pub="[[ -f ~/.ssh/id_rsa.pub ]] && cat ~/.ssh/id_rsa.pub | pbcopy && echo 'id_rsa.pub cp ok' "
-
-export PAGER=most # http://unix.stackexchange.com/a/507
 
 code () {
   VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;
