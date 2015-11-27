@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[JSON.stringify($1)]]></content>
+    <tabTrigger>strify</tabTrigger>
+    <scope>source.js,text.html.ruby</scope>
+    <description>stringify</description>
+</snippet>
