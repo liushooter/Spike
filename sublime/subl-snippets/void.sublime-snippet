@@ -1,6 +1,6 @@
 <snippet>
     <content><![CDATA[javascript:;]]></content>
     <tabTrigger>void</tabTrigger>
-    <scope>text.html.ruby</scope>
+    <scope>text.html,text.html.ruby</scope>
     <description>void_for_js</description>
 </snippet>

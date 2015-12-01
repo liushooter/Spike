@@ -2,6 +2,5 @@
     <content><![CDATA[(function() {$1});]]></content>
     <tabTrigger>-></tabTrigger>
     <scope>source.js,text.html.ruby</scope>
-    <scope></scope>
     <description>closure</description>
 </snippet>
