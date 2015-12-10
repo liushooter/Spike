@@ -9,6 +9,6 @@ set blame-options = -C -C -C    # Blame lines from other files
 # Configure blame view columns using command spanning multiple lines.
 set main-view = \
         date:default \
-        author:abbreviated \
         id:yes,color \
+        author:abbreviated \
         commit-title
