@@ -13,7 +13,7 @@
   ci = commit -m
   st = status -s
   br = branch
-  mv = cherry-pick
+  pick = cherry-pick
   try = commit --amend
   sos = reset --hard @{u} #git reset --hard origin/<br-name>
   chs = "!git checkout $1 && git status"
