@@ -1,0 +1,26 @@
+'.source.js':
+  'closure':
+    'prefix': '->'
+    'body': '(function() {$1});'
+
+  'arrow':
+    'prefix': '=>'
+    'body': '(function(_this) {
+return (function() {$1});
+})(this);'
+
+  'immediate execution':
+    'prefix': 'do->'
+    'body': '(function() {$1})();'
+
+  '$':
+    'prefix': '$'
+    'body': '\$(function() {});'
+
+  'js_ready':
+    'prefix': 'ready'
+    'body': '\$(document).ready(function(){$1});'
+
+  'stringify':
+    'prefix': 'strify'
+    'body': 'JSON.stringify($1)'
