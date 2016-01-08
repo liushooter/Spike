@@ -1,2 +1,22 @@
-Bundle 'gmarik/vundle'
-Bundel 'vim-fugitive'
+syntax on
+filetype on
+set guifont=monaco\ 16
+"set mouse=a
+set tabstop=2
+set softtabstop=2
+set expandtab " expandtab/noexpandtab
+set shiftwidth=2
+set nu
+set list
+set wildmenu "打开命令行补全菜单
+set listchars=eol:¬,tab:▸\ ,trail:.,
+
+set autoread        " 当文件在外部被修改时，自动重新读取
+set fileencodings=utf-8 " 文件UTF-8编码
+set ruler
+highlight LineNr ctermfg=grey "Vim Line Number Color
+set statusline+="%f%m%r%h%w [%Y] [0x%02.2B]%< %F%=%4v,%4l %3p%% of %L" " 显示文件状态
+set laststatus=2
+
+source ~/.vimrc.plugins
+source ~/.vimrc.emacs
