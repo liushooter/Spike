@@ -27,7 +27,7 @@ alias rackup="bundle exec rackup"
 
 alias es="elasticsearch"
 alias redis="redis-server"
-
+# alias vim_install="vim +PluginInstall +qall"
 alias -s gz="tar -xzvf"
 
 # alias Sublime
