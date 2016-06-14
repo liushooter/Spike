@@ -40,17 +40,21 @@ alias subl='open -a "Sublime Text"'
 bindkey \^U backward-kill-line #zsh ctrl-u not work
 
 #alias server='ruby -run -e httpd . -b127.0.0.1 -p3000'
-alias server="python -m SimpleHTTPServer 8888"
+alias server="python -m SimpleHTTPServer 6666"
 
 # system alias
 alias ip="ifconfig |grep inet"
-alias outside_ip="curl ifconfig.me"
+alias out_ip="curl ifconfig.me"
 alias trash="sudo periodic daily weekly monthly"
 alias hiddenfile="defaults write com.apple.finder AppleShowAllFiles -bool false"
 alias displayfile="defaults write com.apple.finder AppleShowAllFiles -bool true"
 alias t_now="date '+%Y-%m-%d %H:%M:%S' "
 alias upper='function _upper(){ echo "$1" | tr "[:lower:]" "[:upper:]" }; _upper'
 alias lower='function _lower(){ echo "$1" | tr "[:upper:]" "[:lower:]" }; _lower'
+
+alias Red='RED="\033[0;31m"; echo "${RED}$1"'
+alias Green='function _green(){ Green="\033[0;32m"; echo "${Green}$1" }; _green'
+
 alias cp_ssh_pub="[[ -f ~/.ssh/id_rsa.pub ]] && cat ~/.ssh/id_rsa.pub | pbcopy && echo 'id_rsa.pub cp ok' "
 
 code () {
