@@ -48,7 +48,9 @@ alias outside_ip="curl ifconfig.me"
 alias trash="sudo periodic daily weekly monthly"
 alias hiddenfile="defaults write com.apple.finder AppleShowAllFiles -bool false"
 alias displayfile="defaults write com.apple.finder AppleShowAllFiles -bool true"
-alias curr_time="date '+%Y-%m-%d %H:%M:%S' "
+alias t_now="date '+%Y-%m-%d %H:%M:%S' "
+alias upper='function _upper(){ echo "$1" | tr "[:lower:]" "[:upper:]" }; _upper'
+alias lower='function _lower(){ echo "$1" | tr "[:upper:]" "[:lower:]" }; _lower'
 alias cp_ssh_pub="[[ -f ~/.ssh/id_rsa.pub ]] && cat ~/.ssh/id_rsa.pub | pbcopy && echo 'id_rsa.pub cp ok' "
 
 code () {
