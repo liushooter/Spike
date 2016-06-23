@@ -15,7 +15,7 @@
   br = branch
   pick = cherry-pick
   try = commit --amend
-  sos = reset --hard @{u} #git reset --hard origin/<br-name>
+  sos = reset --hard @{u} #git reset --hard <remote>/<br-name>
   chs = "!git checkout $1 && git status"
   unstage = reset HEAD
   rollback = reset --soft HEAD~
