@@ -32,6 +32,7 @@ alias es="elasticsearch"
 alias redis="redis-server"
 # alias vim_install="vim +PluginInstall +qall"
 alias -s gz="tar -xzvf"
+alias proxy="proxychains4"
 
 # alias Sublime
 alias subl='open -a "Sublime Text"'
