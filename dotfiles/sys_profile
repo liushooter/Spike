@@ -50,6 +50,7 @@ alias trash="sudo periodic daily weekly monthly"
 alias hiddenfile="defaults write com.apple.finder AppleShowAllFiles -bool false"
 alias displayfile="defaults write com.apple.finder AppleShowAllFiles -bool true"
 alias t_now="date '+%Y-%m-%d %H:%M:%S' "
+alias timestamp="date '+%s'"
 alias upper='function _upper(){ echo "$1" | tr "[:lower:]" "[:upper:]" }; _upper'
 alias lower='function _lower(){ echo "$1" | tr "[:upper:]" "[:lower:]" }; _lower'
 
