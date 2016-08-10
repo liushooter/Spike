@@ -55,6 +55,8 @@ alias lower='function _lower(){ echo "$1" | tr "[:upper:]" "[:lower:]" }; _lower
 
 alias Red='RED="\033[0;31m"; echo "${RED}$1"'
 alias Green='function _green(){ Green="\033[0;32m"; echo "${Green}$1" }; _green'
+alias dtoff="defaults write com.apple.finder CreateDesktop false; killall Finder"
+alias dton="defaults write com.apple.finder CreateDesktop true; killall Finder"
 
 alias cp_ssh_pub="[[ -f ~/.ssh/id_rsa.pub ]] && cat ~/.ssh/id_rsa.pub | pbcopy && echo 'id_rsa.pub cp ok' "
 
