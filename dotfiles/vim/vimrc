@@ -1,19 +1,53 @@
 syntax on
 filetype on
+set title
+set novisualbell " 去掉输入错误的提示声音
+set noerrorbells " 去掉输入错误的提示声音
+set magic " For regular expressions turn magic on
 set guifont=monaco\ 16
 "set mouse=a
-set tabstop=2
-set softtabstop=2
+
+" 设置Tab键的宽度        [等同的空格个数]
+set tabstop=4
+" 每一次缩进对应的空格数
+set shiftwidth=4
+" 按退格键时可以一次删掉 4 个空格
+set softtabstop=4
+" insert tabs on the start of a line according to shiftwidth, not tabstop 按退格键时可以一次删掉 4 个空格
+set smarttab
+" 将Tab自动转化成空格[需要输入真正的Tab键时，使用 Ctrl+V + Tab]
+set expandtab
+" 缩进时，取整 use multiple of shiftwidth when indenting with '<' and '>'
+set shiftround
+
 set expandtab " expandtab/noexpandtab
-set shiftwidth=2
+
 set nu
 set list
 set wildmenu "打开命令行补全菜单
 set listchars=eol:¬,tab:▸\ ,trail:.,
 
+set showcmd " 在状态栏显示正在输入的命令
+set showmode " 左下角显示当前vim模式
+
+" Configure backspace so it acts as it should act
+set backspace=eol,start,indent
+set whichwrap+=<,>,h,l
+
+set scrolloff=7 " 在上下移动光标时，光标的上方或下方至少会保留显示的行数
+
+set showmatch " 括号配对情况, 跳转并高亮一下匹配的括号
+
+set matchtime=2" How many tenths of a second to blink when matching brackets
+
+set hlsearch " 高亮search命中的文本
+set incsearch " 打开增量搜索模式,随着键入即时搜索
+set ignorecase " 搜索时忽略大小写
+set smartcase " 有一个或以上大写字母时仍大小写敏感
+
 set autoread        " 当文件在外部被修改时，自动重新读取
 set fileencodings=utf-8 " 文件UTF-8编码
-set ruler
+set ruler " 显示当前的行号列号
 highlight LineNr ctermfg=grey "Vim Line Number Color
 set statusline+="%f%m%r%h%w [%Y] [0x%02.2B]%< %F%=%4v,%4l %3p%% of %L" " 显示文件状态
 set laststatus=2
@@ -21,6 +55,12 @@ set laststatus=2
 au WinLeave * set nocursorline nocursorcolumn
 au WinEnter * set cursorline cursorcolumn
 set cursorline cursorcolumn
+
+" 关闭方向键, 强迫自己用 hjkl
+map <Left> <Nop>
+map <Right> <Nop>
+map <Up> <Nop>
+map <Down> <Nop>
 
 " Use Plugins config
 if filereadable(expand("~/.vimrc.plugins"))

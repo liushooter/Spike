@@ -7,3 +7,20 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
 Bundle 'msanders/snipmate.vim'
 Bundle 'powerline/powerline'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'scrooloose/syntastic'
+
+Plugin 'tpope/vim-fugitive' "a Git wrapper
+Plugin 'Valloric/YouCompleteMe' "自动补全
+Plugin 'Raimondi/delimitMate' " 自动补全单引号，双引号等
+Plugin 'docunext/closetag.vim' " 自动补全html/xml标签
+Plugin 'scrooloose/nerdcommenter' "快速注释
+Plugin 'thinca/vim-quickrun' "quickrun
+Plugin 'tomtom/tcomment_vim'
+
+Plugin 'klen/python-mode'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mattn/emmet-vim'
+
