@@ -8,8 +8,6 @@ fi
 alias .="source"
 alias rb="ruby"
 alias py="python"
-#alias grep="ag"
-alias ack="ag"
 alias cdiff="colordiff" # http://www.colordiff.org/
 alias tailf="tail -f"
 
