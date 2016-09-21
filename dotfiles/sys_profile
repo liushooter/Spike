@@ -1,9 +1,11 @@
+if [ -x $(which most) ]; then
+  export PAGER=most # http://unix.stackexchange.com/a/507
+else
+ echo  \'most\' is not installed!
+fi
+
 export EDITOR=vim
 export LANG=en_US.UTF-8 #py
-
-if [ most ]; then
-  export PAGER=most # http://unix.stackexchange.com/a/507
-fi
 
 alias .="source"
 alias rb="ruby"
