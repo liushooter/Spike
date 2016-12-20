@@ -64,4 +64,6 @@
   smudge = git lfs smudge %f
   required = true
 [help]
-	autocorrect = -1
+  autocorrect = -1
+[http]
+  sslVerify = false
