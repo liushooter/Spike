@@ -1,5 +1,5 @@
-gem: -V --no-document --no-ri --no-rdoc
+:verbose: true
+install: --no-rdoc --no-ri
+update: --no-rdoc --no-ri
 
-# Deprecated Options:
-# --[no-]rdoc - Generate RDoc for installed gems Use --document instead
-# --[no-]ri - Generate ri data for installed gems. Use --document instead
+# http://guides.rubygems.org/command-reference/#gem-environment
