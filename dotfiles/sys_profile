@@ -1,3 +1,6 @@
+#force_color_prompt=yes
+#export LS_COLORS='rs=0:di=01;34:ln=01;36:mh=00:pi=40;33'
+
 if [ -x $(which most) ]; then
   export PAGER=most # http://unix.stackexchange.com/a/507
 else
@@ -54,8 +57,10 @@ alias timestamp="date '+%s'"
 alias upper='function _upper(){ echo "$1" | tr "[:lower:]" "[:upper:]" }; _upper'
 alias lower='function _lower(){ echo "$1" | tr "[:upper:]" "[:lower:]" }; _lower'
 
-alias Red='RED="\033[0;31m"; echo "${RED}$1"'
-alias Green='function _green(){ Green="\033[0;32m"; echo "${Green}$1" }; _green'
+alias Red='RED="\033[0;31m"; echo -e "${RED}$1"'
+alias Green='GREEN="\033[0;32m"; echo -e "${GREEN}$1"'
+alias Yellow='YELLOW="\033[0;33m"; echo -e "${YELLOW}$1"'
+#alias Green='function _green(){ Green="\033[0;32m"; echo -e "${Green}$1" }; _green'
 alias dtoff="defaults write com.apple.finder CreateDesktop false; killall Finder"
 alias dton="defaults write com.apple.finder CreateDesktop true; killall Finder"
 
@@ -63,4 +68,9 @@ alias cp_ssh_pub="[[ -f ~/.ssh/id_rsa.pub ]] && cat ~/.ssh/id_rsa.pub | pbcopy &
 
 code () {
   VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;
+}
+
+mark () {
+  echo -e "\033[0;31m ********** `t_now` **********"
+  echo -e "\e[0m" # No Color
 }
