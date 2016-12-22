@@ -67,3 +67,6 @@
   autocorrect = -1
 [http]
   sslVerify = false
+#[url "https://github.com"]
+#  insteadOf = git://github.com
+# git config --global url."https://github.com".insteadOf git://github.com
