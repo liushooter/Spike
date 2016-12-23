@@ -4,7 +4,7 @@
 if [ -x $(which most) ]; then
   export PAGER=most # http://unix.stackexchange.com/a/507
 else
- echo  \'most\' is not installed!
+ echo "most is not installed!"
 fi
 
 export EDITOR=vim
@@ -17,7 +17,7 @@ alias cdiff="colordiff" # http://www.colordiff.org/
 alias tailf="tail -f"
 
 alias r="bundle exec rails"
-alias rsb="bundle exec rails s -b 127.0.0.1"
+alias rsb="bundle exec rails s -b 0.0.0.0"
 alias rr="bundle exec rake routes"
 alias rds="bundle exec rake db:seed"
 alias rdd="bundle exec rake db:drop"
@@ -53,7 +53,7 @@ alias trash="sudo periodic daily weekly monthly"
 alias hiddenfile="defaults write com.apple.finder AppleShowAllFiles -bool false"
 alias displayfile="defaults write com.apple.finder AppleShowAllFiles -bool true"
 alias t_now="date '+%Y-%m-%d %H:%M:%S' "
-alias timestamp="date '+%s'"
+alias timestamp="date +%s"
 alias upper='function _upper(){ echo "$1" | tr "[:lower:]" "[:upper:]" }; _upper'
 alias lower='function _lower(){ echo "$1" | tr "[:upper:]" "[:lower:]" }; _lower'
 
@@ -61,16 +61,17 @@ alias Red='RED="\033[0;31m"; echo -e "${RED}$1"'
 alias Green='GREEN="\033[0;32m"; echo -e "${GREEN}$1"'
 alias Yellow='YELLOW="\033[0;33m"; echo -e "${YELLOW}$1"'
 #alias Green='function _green(){ Green="\033[0;32m"; echo -e "${Green}$1" }; _green'
+
 alias dtoff="defaults write com.apple.finder CreateDesktop false; killall Finder"
 alias dton="defaults write com.apple.finder CreateDesktop true; killall Finder"
 
 alias cp_ssh_pub="[[ -f ~/.ssh/id_rsa.pub ]] && cat ~/.ssh/id_rsa.pub | pbcopy && echo 'id_rsa.pub cp ok' "
 
-code () {
-  VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;
+mark () {
+  echo -e "\033[0;31m ********** `date +%s` **********"
+  echo -e "\e[0m" # No Color
 }
 
-mark () {
-  echo -e "\033[0;31m ********** `t_now` **********"
-  echo -e "\e[0m" # No Color
+code () {
+  VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;
 }
