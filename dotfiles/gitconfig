@@ -6,13 +6,12 @@
   bi = bisect
   df = diff --word-diff
   dfc = diff --word-diff --cached
-  cl = clone
   bl = blame --pretty=format:"%h"
-  mr = merge
   co = checkout
   ci = commit -m
   st = status -s
   br = branch
+  unstash = stash pop
   pick = cherry-pick
   try = commit --amend
   sos = reset --hard @{u} #git reset --hard <remote>/<br-name>
