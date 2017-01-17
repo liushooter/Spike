@@ -27,7 +27,7 @@
   sweep = clean -fdx
   rm-lists = ls-files --deleted
   rm-all = "!git rm $(git ls-files --deleted)"
-  flog = log -p -1
+  last = log -p -1
   revlog = log --pretty=format:'%Cred%h%Creset - %C(yellow)%an%Creset - %Cgreen%cd%Creset - %s%Creset' --abbrev-commit --date=iso --reverse
   copy = "!git log -1 --pretty=%B | pbcopy"
   tlog = log --pretty=format:'%Cred%h%Creset - %C(yellow)%an%Creset - %Cgreen%cd%Creset - %s%Creset' --abbrev-commit --date=iso
