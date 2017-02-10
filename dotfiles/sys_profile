@@ -30,6 +30,7 @@ alias rtc="bundle exec rake tmp:clear"
 alias precompile="bundle exec rake assets:precompile RAILS_ENV=production"
 alias rsp="bundle exec rspec"
 alias rackup="bundle exec rackup"
+alias rbuild="env VERBOSE=true rails db:drop:all db:create:all"
 
 alias es="elasticsearch"
 alias redis="redis-server"

@@ -11,8 +11,6 @@
   ci = commit -m
   st = status -s
   br = branch
-  unstash = stash pop
-  pick = cherry-pick
   try = commit --amend
   sos = reset --hard @{u} #git reset --hard <remote>/<br-name>
   chs = "!git checkout $1 && git status"
@@ -40,6 +38,8 @@
   diff = auto
   status = auto
   branch = auto
+[column]
+  ui = always
 [core]
   editor = vim
   excludesfile = ~/.gitignore_global
