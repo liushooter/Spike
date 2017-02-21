@@ -14,3 +14,7 @@ for STYLE in 0 1 2 3 4 5 6 7; do
   done
   echo
 done
+
+for c in {0..255} ; do
+  echo -e "\e[38;05;${c}m ${c} Bash Color Chart"
+done
