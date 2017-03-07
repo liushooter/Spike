@@ -44,6 +44,7 @@
 [core]
   editor = vim
   excludesfile = ~/.gitignore_global
+  ignorecase = false
 [diff]
   prompt = false
   tool = vimdiff
