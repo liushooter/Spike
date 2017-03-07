@@ -1,4 +1,5 @@
 require 'hirb'
+require 'pry'
 require 'active_record'
 require 'awesome_print'
 AwesomePrint.irb!
