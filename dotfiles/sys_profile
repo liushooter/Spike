@@ -7,8 +7,11 @@ else
  echo "most is not installed!"
 fi
 
+export LC_ALL=C
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US
+export LC_ALL=en_US.UTF-8
 export EDITOR=vim
-export LANG=en_US.UTF-8 #py
 
 alias .="source"
 alias rb="ruby"
@@ -45,7 +48,7 @@ alias subl='open -a "Sublime Text"'
 bindkey \^U backward-kill-line #zsh ctrl-u not work
 
 #alias server='ruby -run -e httpd . -b127.0.0.1 -p3000'
-alias server="python -m SimpleHTTPServer 6666"
+alias server="python -m SimpleHTTPServer "
 
 # system alias
 alias ip="ifconfig |grep inet"

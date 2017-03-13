@@ -5,7 +5,7 @@
   d = difftool
   bi = bisect
   df = diff --word-diff
-  dfc = diff --word-diff --cached
+  dfw = diff --ignore-space-change
   bl = blame --pretty=format:"%h"
   co = checkout
   ci = commit -m
