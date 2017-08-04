@@ -48,7 +48,7 @@ alias subl='open -a "Sublime Text"'
 bindkey \^U backward-kill-line #zsh ctrl-u not work
 
 #alias server='ruby -run -e httpd . -b127.0.0.1 -p3000'
-alias server="python -m SimpleHTTPServer "
+alias server="python -m SimpleHTTPServer"
 
 # system alias
 alias ip="ifconfig |grep inet"
@@ -58,6 +58,7 @@ alias hiddenfile="defaults write com.apple.finder AppleShowAllFiles -bool false"
 alias displayfile="defaults write com.apple.finder AppleShowAllFiles -bool true"
 alias t_now="date '+%Y-%m-%d %H:%M:%S' "
 alias timestamp="date +%s"
+alias t_at='function t_at(){ echo "$1" | date -r $1  +"%Y-%m-%d %H:%M:%S" }; t_at'
 alias upper='function _upper(){ echo "$1" | tr "[:lower:]" "[:upper:]" }; _upper'
 alias lower='function _lower(){ echo "$1" | tr "[:upper:]" "[:lower:]" }; _lower'
 
