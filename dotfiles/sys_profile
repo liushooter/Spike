@@ -4,7 +4,7 @@
 if [ -x $(which most) ]; then
   export PAGER=most # http://unix.stackexchange.com/a/507
 else
- echo "most is not installed!"
+ echo "Most is not installed!"
 fi
 
 export LC_ALL=C
@@ -17,23 +17,9 @@ alias .="source"
 alias rb="ruby"
 alias py="python"
 alias cdiff="colordiff" # http://www.colordiff.org/
+alias vdiff=vimdiff
 alias tailf="tail -f"
 
-alias r="bundle exec rails"
-alias rsb="bundle exec rails s -b 0.0.0.0"
-alias rr="bundle exec rake routes"
-alias rds="bundle exec rake db:seed"
-alias rdd="bundle exec rake db:drop"
-alias rdc="bundle exec rake db:create"
-alias rdm="bundle exec rake db:migrate"
-alias rauto="bundle exec rake db:auto:migrate" # https://github.com/yzhang/auto_migrations_rails4
-alias rdr="bundle exec rake db:rollback"
-alias rds="bundle exec rake db:schema:load"
-alias rtc="bundle exec rake tmp:clear"
-alias precompile="bundle exec rake assets:precompile RAILS_ENV=production"
-alias rsp="bundle exec rspec"
-alias rackup="bundle exec rackup"
-alias rbuild="env VERBOSE=true rails db:drop:all db:create:all"
 
 alias es="elasticsearch"
 alias redis="redis-server"
@@ -53,12 +39,13 @@ alias server="python -m SimpleHTTPServer"
 # system alias
 alias ip="ifconfig |grep inet"
 alias out_ip="curl ifconfig.me"
-alias trash="sudo periodic daily weekly monthly"
-alias hiddenfile="defaults write com.apple.finder AppleShowAllFiles -bool false"
-alias displayfile="defaults write com.apple.finder AppleShowAllFiles -bool true"
+
+alias len='function _len(){ echo "${#1}"}; _len'
+
 alias t_now="date '+%Y-%m-%d %H:%M:%S' "
 alias timestamp="date +%s"
 alias t_at='function t_at(){ echo "$1" | date -r $1  +"%Y-%m-%d %H:%M:%S" }; t_at'
+
 alias upper='function _upper(){ echo "$1" | tr "[:lower:]" "[:upper:]" }; _upper'
 alias lower='function _lower(){ echo "$1" | tr "[:upper:]" "[:lower:]" }; _lower'
 
@@ -66,9 +53,6 @@ alias Red='RED="\033[0;31m"; echo -e "${RED}$1"'
 alias Green='GREEN="\033[0;32m"; echo -e "${GREEN}$1"'
 alias Yellow='YELLOW="\033[0;33m"; echo -e "${YELLOW}$1"'
 #alias Green='function _green(){ Green="\033[0;32m"; echo -e "${Green}$1" }; _green'
-
-alias dtoff="defaults write com.apple.finder CreateDesktop false; killall Finder"
-alias dton="defaults write com.apple.finder CreateDesktop true; killall Finder"
 
 alias cp_ssh_pub="[[ -f ~/.ssh/id_rsa.pub ]] && cat ~/.ssh/id_rsa.pub | pbcopy && echo 'id_rsa.pub cp ok' "
 

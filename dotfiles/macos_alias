@@ -1,0 +1,5 @@
+alias trash="sudo periodic daily weekly monthly"
+alias dtoff="defaults write com.apple.finder CreateDesktop false; killall Finder"
+alias dton="defaults write com.apple.finder CreateDesktop true; killall Finder"
+alias hiddenfile="defaults write com.apple.finder AppleShowAllFiles -bool false"
+alias displayfile="defaults write com.apple.finder AppleShowAllFiles -bool true"
