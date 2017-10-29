@@ -1,6 +1,6 @@
 [user]
-  name = shooter
-  email = shooter.hero@gmail.com
+  name = ''
+  email = ''
 [alias]
   d = difftool
   bi = bisect
