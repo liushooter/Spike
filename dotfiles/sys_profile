@@ -1,33 +1,31 @@
 #force_color_prompt=yes
 #export LS_COLORS='rs=0:di=01;34:ln=01;36:mh=00:pi=40;33'
 
-if [ -x $(which most) ]; then
-  export PAGER=most # http://unix.stackexchange.com/a/507
-else
- echo "Most is not installed!"
-fi
-
 export LC_ALL=C
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US
 export LC_ALL=en_US.UTF-8
 export EDITOR=vim
 
+if [ -x $(which most) ]; then
+  export PAGER=most # http://unix.stackexchange.com/a/507
+else
+ echo "Most is not installed!"
+fi
+
 alias .="source"
 alias rb="ruby"
 alias py="python"
 alias cdiff="colordiff" # http://www.colordiff.org/
 alias vdiff=vimdiff
-alias tailf="tail -f"
-
+alias tf="tail -f"
 
 alias es="elasticsearch"
 alias redis="redis-server"
-# alias vim_install="vim +PluginInstall +qall"
 alias -s gz="tar -xzvf"
 alias proxy="proxychains4"
+# alias vim_install="vim +PluginInstall +qall"
 
-# alias Sublime
 alias subl='open -a "Sublime Text"'
 
 # bindkey
@@ -36,16 +34,12 @@ bindkey \^U backward-kill-line #zsh ctrl-u not work
 #alias server='ruby -run -e httpd . -b127.0.0.1 -p3000'
 alias server="python -m SimpleHTTPServer"
 
-# system alias
 alias ip="ifconfig |grep inet"
-alias out_ip="curl ifconfig.me"
-
+alias myip="curl https://ip.cn"
 alias len='function _len(){ echo "${#1}"}; _len'
-
 alias t_now="date '+%Y-%m-%d %H:%M:%S' "
 alias timestamp="date +%s"
 alias t_at='function t_at(){ echo "$1" | date -r $1  +"%Y-%m-%d %H:%M:%S" }; t_at'
-
 alias upper='function _upper(){ echo "$1" | tr "[:lower:]" "[:upper:]" }; _upper'
 alias lower='function _lower(){ echo "$1" | tr "[:upper:]" "[:lower:]" }; _lower'
 
@@ -53,6 +47,12 @@ alias Red='RED="\033[0;31m"; echo -e "${RED}$1"'
 alias Green='GREEN="\033[0;32m"; echo -e "${GREEN}$1"'
 alias Yellow='YELLOW="\033[0;33m"; echo -e "${YELLOW}$1"'
 #alias Green='function _green(){ Green="\033[0;32m"; echo -e "${Green}$1" }; _green'
+
+alias kill9="kill -9";
+alias psx="ps axo pid,user,command | grep"
+alias psg="\ps aux | grep"
+alias netp="netstat -tulan"  # 查看服务器端口连接信息
+# http://seanlook.com/2014/03/09/linux-bash/
 
 alias cp_ssh_pub="[[ -f ~/.ssh/id_rsa.pub ]] && cat ~/.ssh/id_rsa.pub | pbcopy && echo 'id_rsa.pub cp ok' "
 
