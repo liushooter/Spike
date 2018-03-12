@@ -33,7 +33,7 @@ bindkey \^U backward-kill-line #zsh ctrl-u not work
 
 #alias server='ruby -run -e httpd . -b127.0.0.1 -p3000'
 alias server="python -m SimpleHTTPServer"
-
+alias note="jupyter notebook"
 alias ip="ifconfig |grep inet"
 alias myip="curl https://ip.cn"
 alias len='function _len(){ echo "${#1}"}; _len'
