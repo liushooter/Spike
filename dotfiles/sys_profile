@@ -54,9 +54,11 @@ alias psg="\ps aux | grep"
 alias netp="netstat -tulan"  # 查看服务器端口连接信息
 # http://seanlook.com/2014/03/09/linux-bash/
 
-hex(){
-  echo $(($1))
+decimal(){
+  echo $(($1)) # convert hexadecimal to decimal
 }
+
+alias hex="printf '0x%x\n' $1" # convert decimal to hexadecimal
 
 alias cp_ssh_pub="[[ -f ~/.ssh/id_rsa.pub ]] && cat ~/.ssh/id_rsa.pub | pbcopy && echo 'id_rsa.pub cp ok' "
 
