@@ -26,8 +26,6 @@ alias -s gz="tar -xzvf"
 alias proxy="proxychains4"
 # alias vim_install="vim +PluginInstall +qall"
 
-alias subl='open -a "Sublime Text"'
-
 # bindkey
 bindkey \^U backward-kill-line #zsh ctrl-u not work
 
@@ -36,12 +34,9 @@ alias server="python -m SimpleHTTPServer"
 alias note="jupyter notebook"
 alias ip="ifconfig |grep inet"
 alias myip="curl https://ip.cn"
-alias len='function _len(){ echo "${#1}"}; _len'
 alias t_now="date '+%Y-%m-%d %H:%M:%S' "
 alias timestamp="date +%s"
 alias t_at='function t_at(){ echo "$1" | date -r $1  +"%Y-%m-%d %H:%M:%S" }; t_at'
-alias upper='function _upper(){ echo "$1" | tr "[:lower:]" "[:upper:]" }; _upper'
-alias lower='function _lower(){ echo "$1" | tr "[:upper:]" "[:lower:]" }; _lower'
 
 alias Red='RED="\033[0;31m"; echo -e "${RED}$1"'
 alias Green='GREEN="\033[0;32m"; echo -e "${GREEN}$1"'
@@ -54,11 +49,26 @@ alias psg="\ps aux | grep"
 alias netp="netstat -tulan"  # 查看服务器端口连接信息
 # http://seanlook.com/2014/03/09/linux-bash/
 
+len(){
+  echo "${#1}"
+}
+
+upper(){
+  echo "$1" | tr "[:lower:]" "[:upper:]"
+}
+
+lower(){
+  echo "$1" | tr "[:upper:]" "[:lower:]"
+}
+
 decimal(){
   echo $(($1)) # convert hexadecimal to decimal
 }
 
-alias hex="printf '0x%x\n' $1" # convert decimal to hexadecimal
+hex(){
+  printf '0x%x\n' $1
+  # convert decimal to hexadecimal
+}
 
 alias cp_ssh_pub="[[ -f ~/.ssh/id_rsa.pub ]] && cat ~/.ssh/id_rsa.pub | pbcopy && echo 'id_rsa.pub cp ok' "
 
