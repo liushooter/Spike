@@ -8,12 +8,6 @@ export LC_ALL=en_US.UTF-8
 export EDITOR=vim
 export TIME_STYLE=long-iso
 
-if [ -x $(which most) ]; then
-  export PAGER=most # http://unix.stackexchange.com/a/507
-else
- echo "Most is not installed!"
-fi
-
 alias .="source"
 alias rb="ruby"
 alias py="python"
