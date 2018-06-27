@@ -1,0 +1,4 @@
+alias goget="go get -v -u"
+alias gofmt="go fmt"
+alias gorun="go run"
+alias gopath="export GOPATH=`pwd`"
