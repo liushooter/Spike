@@ -1,6 +1,3 @@
-#force_color_prompt=yes
-#export LS_COLORS='rs=0:di=01;34:ln=01;36:mh=00:pi=40;33'
-
 export LC_ALL=C
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US
@@ -15,20 +12,14 @@ alias cdiff="colordiff" # http://www.colordiff.org/
 alias vdiff=vimdiff
 alias tf="tail -f"
 
-alias es="elasticsearch"
-alias redis="redis-server"
-alias -s gz="tar -xzvf"
 alias proxy="proxychains4"
 # alias vim_install="vim +PluginInstall +qall"
-
-# bindkey
-bindkey \^U backward-kill-line #zsh ctrl-u not work
 
 #alias server='ruby -run -e httpd . -b127.0.0.1 -p3000'
 alias server="python -m SimpleHTTPServer"
 alias note="jupyter notebook"
-alias ip="ifconfig |grep inet"
-alias myip="curl https://ip.cn"
+alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias ipcn="curl https://ip.cn"
 alias t_now="date '+%Y-%m-%d %H:%M:%S' "
 alias timestamp="date +%s"
 alias t_at='function t_at(){ echo "$1" | date -r $1  +"%Y-%m-%d %H:%M:%S" }; t_at'
@@ -43,6 +34,10 @@ alias psx="ps axo pid,user,command | grep"
 alias psg="\ps aux | grep"
 alias netp="netstat -tulan"  # 查看服务器端口连接信息
 # http://seanlook.com/2014/03/09/linux-bash/
+
+ip(){
+  ifconfig | grep 'inet ' | grep -v '127.0.0.1' | head -n1 | awk '{print $2}' | cut -d':' -f2
+}
 
 len(){
   echo "${#1}"
@@ -65,13 +60,17 @@ hex(){
   # convert decimal to hexadecimal
 }
 
-alias cp_ssh_pub="[[ -f ~/.ssh/id_rsa.pub ]] && cat ~/.ssh/id_rsa.pub | pbcopy && echo 'id_rsa.pub cp ok' "
-
 mark () {
   echo -e "\033[0;31m ********** `date +%s` **********"
   echo -e "\e[0m" # No Color
 }
 
-code () {
-  VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;
-}
+if [ `uname`=="Darwin" ]; then
+  bindkey \^U backward-kill-line #zsh ctrl-u not work
+  alias -s gz="tar -xzvf"
+  alias cp_ssh_pub="[[ -f ~/.ssh/id_rsa.pub ]] && cat ~/.ssh/id_rsa.pub | pbcopy && echo 'id_rsa.pub cp ok' "
+
+  code () {
+    VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;
+  }
+fi
