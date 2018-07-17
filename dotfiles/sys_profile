@@ -65,7 +65,7 @@ mark () {
   echo -e "\e[0m" # No Color
 }
 
-if [ `uname`=="Darwin" ]; then
+if [[ `uname` == 'Darwin' ]]; then
   bindkey \^U backward-kill-line #zsh ctrl-u not work
   alias -s gz="tar -xzvf"
   alias cp_ssh_pub="[[ -f ~/.ssh/id_rsa.pub ]] && cat ~/.ssh/id_rsa.pub | pbcopy && echo 'id_rsa.pub cp ok' "
