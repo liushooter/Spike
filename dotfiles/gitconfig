@@ -9,7 +9,7 @@
   bl = blame --pretty=format:"%h"
   co = checkout
   ci = commit -m
-  cis = commit -S -m # https://help.github.com/articles/signing-commits-using-gpg/
+  auth = commit -S -m # https://help.github.com/articles/signing-commits-using-gpg/
   st = status -s
   br = branch
   try = commit --amend
@@ -19,6 +19,7 @@
   rollback = reset --soft HEAD~
   undo = "!git reset --soft HEAD~ && git reset HEAD"
   line = log --pretty=oneline
+  save = config --global credential.helper cache
   tree = log --graph --decorate --pretty=oneline --abbrev-commit
   count = rev-list --count HEAD
   brname = rev-parse --abbrev-ref HEAD
