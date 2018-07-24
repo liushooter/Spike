@@ -19,7 +19,7 @@
   rollback = reset --soft HEAD~
   undo = "!git reset --soft HEAD~ && git reset HEAD"
   line = log --pretty=oneline
-  save = config --global credential.helper cache
+  save = config --global credential.helper store
   tree = log --graph --decorate --pretty=oneline --abbrev-commit
   count = rev-list --count HEAD
   brname = rev-parse --abbrev-ref HEAD
@@ -71,7 +71,7 @@
 [help]
   autocorrect = -1
 [http]
-  sslVerify = false
+  sslVerify = true
 #[url "https://github.com"]
 #  insteadOf = git://github.com
 # git config --global url."https://github.com".insteadOf git://github.com
