@@ -60,9 +60,13 @@ hex(){
   # convert decimal to hexadecimal
 }
 
-mark () {
+mark() {
   echo -e "\033[0;31m ********** `date +%s` **********"
   echo -e "\e[0m" # No Color
+}
+
+genpass() {
+  printf $1 | md5 | cut -c 1-10 | base64 | cut -c 1-11
 }
 
 if [[ `uname` == 'Darwin' ]]; then
