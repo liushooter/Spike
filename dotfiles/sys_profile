@@ -11,6 +11,7 @@ alias py="python"
 alias cdiff="colordiff" # http://www.colordiff.org/
 alias vdiff=vimdiff
 alias tf="tail -f"
+alias lsd="ls -d .*"
 
 alias proxy="proxychains4"
 # alias vim_install="vim +PluginInstall +qall"
