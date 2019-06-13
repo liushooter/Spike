@@ -8,21 +8,19 @@ export TIME_STYLE=long-iso
 alias .="source"
 alias rb="ruby"
 alias py="python"
+alias py3="python3"
 alias cdiff="colordiff" # http://www.colordiff.org/
 alias vdiff=vimdiff
 alias tf="tail -f"
 alias lsd="ls -d .*"
-
-alias proxy="proxychains4"
-# alias vim_install="vim +PluginInstall +qall"
 
 #alias server='ruby -run -e httpd . -b127.0.0.1 -p3000'
 alias server="python -m SimpleHTTPServer"
 alias note="jupyter notebook"
 alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias ipcn="curl https://ip.cn"
-alias t_now="date '+%Y-%m-%d %H:%M:%S' "
-alias timestamp="date +%s"
+alias now="date '+%Y-%m-%d %H:%M:%S' "
+alias utc="date +%s"
 alias t_at='function t_at(){ echo "$1" | date -r $1  +"%Y-%m-%d %H:%M:%S" }; t_at'
 
 alias Red='RED="\033[0;31m"; echo -e "${RED}$1"'
@@ -37,7 +35,8 @@ alias netp="netstat -tulan"  # 查看服务器端口连接信息
 # http://seanlook.com/2014/03/09/linux-bash/
 
 ip(){
-  ifconfig | grep 'inet ' | grep -v '127.0.0.1' | head -n1 | awk '{print $2}' | cut -d':' -f2
+  ifconfig | grep 'inet ' | grep -v '127.0.0.1' | head -n1 | awk '{print $2}' | cut -d ':' -f2
+  # ifconfig | grep inet | grep -v inet6 | cut -d" " -f2 | tail -n1
 }
 
 len(){
@@ -57,8 +56,13 @@ decimal(){
 }
 
 hex(){
-  printf '0x%x\n' $1
-  # convert decimal to hexadecimal
+  printf '0x%x\n' $1 # convert decimal to hexadecimal
+}
+
+str2hex(){
+  # http://www.bejson.com/convert/ox2str/
+  # echo -n "$1" | od -A n -t x1 | sed 's/ *//g'
+  echo -n "$1" | od -A n -t x1 | sed 's/ *//g' | xargs printf "0x%s\n"
 }
 
 mark() {
@@ -66,16 +70,34 @@ mark() {
   echo -e "\e[0m" # No Color
 }
 
+seed(){
+  hexdump -n 32 -e '8/8 "%08x" 1 "\n"' /dev/random
+  # https://stackoverflow.com/a/34329057
+}
+
 genpass() {
-  printf $1 | md5 | cut -c 1-10 | base64 | cut -c 1-11
+  cat /dev/urandom | base64 | head -c $1
 }
 
 if [[ `uname` == 'Darwin' ]]; then
-  bindkey \^U backward-kill-line #zsh ctrl-u not work
+  bindkey -v
+  bindkey '^w' backward-kill-word
+  bindkey '^d' delete-char
+  bindkey '^u' backward-kill-line #zsh ctrl-u not work
+  bindkey '^k' kill-line
+  bindkey '^f' forward-char
+  bindkey '^b' backward-char
+
   alias -s gz="tar -xzvf"
+  alias pwdc="pwd| pbcopy"
   alias cp_ssh_pub="[[ -f ~/.ssh/id_rsa.pub ]] && cat ~/.ssh/id_rsa.pub | pbcopy && echo 'id_rsa.pub cp ok' "
 
-  code () {
+  vscode () {
     VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;
   }
+
+  code () {
+    VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCodeInsiders" --args $* ;
+  }
+
 fi
