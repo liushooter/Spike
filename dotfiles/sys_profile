@@ -34,6 +34,8 @@ alias psg="\ps aux | grep"
 alias netp="netstat -tulan"  # 查看服务器端口连接信息
 # http://seanlook.com/2014/03/09/linux-bash/
 
+alias locat="exiftool -filename -gpslatitude -gpslongitude -T"
+
 ip(){
   ifconfig | grep 'inet ' | grep -v '127.0.0.1' | head -n1 | awk '{print $2}' | cut -d ':' -f2
   # ifconfig | grep inet | grep -v inet6 | cut -d" " -f2 | tail -n1
@@ -66,17 +68,31 @@ str2hex(){
 }
 
 mark() {
-  echo -e "\033[0;31m ********** `date +%s` **********"
+  echo -e "\033[0;31m ***** `date +%s` *****"
   echo -e "\e[0m" # No Color
 }
 
 seed(){
-  hexdump -n 32 -e '8/8 "%08x" 1 "\n"' /dev/random
+  hexdump -n 32 -e '8/8 "%08x" 1 "\n"' /dev/urandom
   # https://stackoverflow.com/a/34329057
 }
 
 genpass() {
-  cat /dev/urandom | base64 | head -c $1
+  cat /dev/urandom | base64 | head -c $1 | xargs printf "%s\n"
+}
+
+function proxy() {
+  if [[ $1 == "stop" ]] ; then
+    export http_proxy=
+    export https_proxy=
+  elif [[ $1 == "test" ]] ; then
+    curl ip.gs
+    # curl ip.sb
+  else
+    export http_proxy='http://127.0.0.1:7890'
+    export https_proxy='http://127.0.0.1:7890'
+    export all_proxy='socks5://127.0.0.1:7891'
+  fi
 }
 
 if [[ `uname` == 'Darwin' ]]; then
