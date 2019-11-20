@@ -10,7 +10,7 @@
   co = checkout
   ci = commit -m
   auth = commit -S -m # https://help.github.com/articles/signing-commits-using-gpg/
-  st = status -s
+  st = status
   br = branch
   try = commit --amend
   sos = reset --hard @{u} #git reset --hard <remote>/<br-name>
@@ -36,6 +36,7 @@
   ignore = update-index --assume-unchanged
   unignore = update-index --no-assume-unchanged
   ignored = !git ls-files -v | grep "^[[:lower:]]"
+  url = "remote -v"
 [color]
   ui = auto
   diff = auto
@@ -72,8 +73,6 @@
   autocorrect = -1
 [http]
   sslVerify = true
-#[url "https://github.com"]
-#  insteadOf = git://github.com
-# git config --global url."https://github.com".insteadOf git://github.com
 [url "https://github.com"]
   insteadOf = git://github.com
+  # git config --global url."https://github.com".insteadOf git://github.com
