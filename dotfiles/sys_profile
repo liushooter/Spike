@@ -34,7 +34,7 @@ alias psg="\ps aux | grep"
 alias netp="netstat -tulan"  # 查看服务器端口连接信息
 # http://seanlook.com/2014/03/09/linux-bash/
 
-alias locat="exiftool -filename -gpslatitude -gpslongitude -T"
+alias locat="exiftool -gpslatitude -gpslongitude -gpsaltitude -Make -filename -n -T"
 
 ip(){
   ifconfig | grep 'inet ' | grep -v '127.0.0.1' | head -n1 | awk '{print $2}' | cut -d ':' -f2
