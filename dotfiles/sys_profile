@@ -81,6 +81,10 @@ genpass() {
   cat /dev/urandom | base64 | head -c $1 | xargs printf "%s\n"
 }
 
+doc(){ # https://www.commandlinefu.com/commands/view/4311/extract-plain-text-from-ms-word-docx-files
+  unzip -p $1 word/document.xml | sed -e 's/<[^>]\{1,\}>//g; s/[^[:print:]]\{1,\}//g'
+}
+
 function proxy() {
   if [[ $1 == "stop" ]] ; then
     export http_proxy=
