@@ -7,3 +7,5 @@ sudo add-apt-repository 'deb http://mirrors.hustunique.com/mariadb/repo/10.1/ubu
 sudo apt-get -qq update
 
 sudo apt-get install -y mariadb-server mariadb-client libmariadbclient-dev
+
+# https://linuxize.com/post/how-to-install-mariadb-on-ubuntu-18-04/
