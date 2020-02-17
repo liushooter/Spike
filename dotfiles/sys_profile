@@ -34,7 +34,9 @@ alias psg="\ps aux | grep"
 alias netp="netstat -tulan"  # 查看服务器端口连接信息
 # http://seanlook.com/2014/03/09/linux-bash/
 
-alias locat="exiftool -gpslatitude -gpslongitude -gpsaltitude -Make -filename -n -T"
+alias gps="exiftool -gpslatitude -gpslongitude -gpsaltitude -Make -filename -n -T"
+
+alias mac="ifconfig en1 | awk '/ether/{print $2}'"
 
 ip(){
   ifconfig | grep 'inet ' | grep -v '127.0.0.1' | head -n1 | awk '{print $2}' | cut -d ':' -f2
@@ -100,24 +102,20 @@ function proxy() {
 }
 
 if [[ `uname` == 'Darwin' ]]; then
-  bindkey -v
+ # bindkey -v # vi 模式
   bindkey '^w' backward-kill-word
   bindkey '^d' delete-char
   bindkey '^u' backward-kill-line #zsh ctrl-u not work
   bindkey '^k' kill-line
   bindkey '^f' forward-char
   bindkey '^b' backward-char
+  bindkey '^R' history-incremental-search-backward # https://unix.stackexchange.com/a/30169
 
   alias -s gz="tar -xzvf"
-  alias pwdc="pwd| pbcopy"
+  alias pwdc="pwd | pbcopy"
   alias cp_ssh_pub="[[ -f ~/.ssh/id_rsa.pub ]] && cat ~/.ssh/id_rsa.pub | pbcopy && echo 'id_rsa.pub cp ok' "
 
-  vscode () {
-    VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;
-  }
-
-  code () {
+  newcode () {
     VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCodeInsiders" --args $* ;
   }
-
 fi
