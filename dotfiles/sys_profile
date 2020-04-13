@@ -28,11 +28,13 @@ alias Green='GREEN="\033[0;32m"; echo -e "${GREEN}$1"'
 alias Yellow='YELLOW="\033[0;33m"; echo -e "${YELLOW}$1"'
 #alias Green='function _green(){ Green="\033[0;32m"; echo -e "${Green}$1" }; _green'
 
-alias kill9="kill -9";
+alias kill9="kill -9"
 alias psx="ps axo pid,user,command | grep"
 alias psg="\ps aux | grep"
 alias netp="netstat -tulan"  # 查看服务器端口连接信息
 # http://seanlook.com/2014/03/09/linux-bash/
+
+alias ag="ag -i"
 
 alias gps="exiftool -gpslatitude -gpslongitude -gpsaltitude -Make -filename -n -T"
 
