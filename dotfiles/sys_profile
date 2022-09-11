@@ -19,12 +19,12 @@ alias lst="stat -l -t '%F %T %z' * "
 alias note="jupyter notebook"
 
 #alias server='ruby -run -e httpd . -b127.0.0.1 -p3000'
-alias server="python -m SimpleHTTPServer"
+alias server="python3 -m http.server" # python -m SimpleHTTPServer
 alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias ipcn="curl https://ip.cn"
 alias now="date '+%Y-%m-%d %H:%M:%S' "
 alias utc="date +%s"
-function t_at(){ echo $1 | date -r $1  +"%Y-%m-%d %H:%M:%S" };
+function t_at(){date -r $1  +"%Y-%m-%d %H:%M:%S"};
 
 alias Red='RED="\033[0;31m"; echo -e "${RED}$1"'
 alias Green='GREEN="\033[0;32m"; echo -e "${GREEN}$1"'
@@ -41,7 +41,7 @@ alias ag="ag -i"
 
 alias gps="exiftool -gpslatitude -gpslongitude -gpsaltitude -Make -filename -n -T"
 
-alias mac="ifconfig en0 | awk '/ether/{print $2}'"
+alias macaddr="ifconfig en0 | awk '/ether/{print $2}'"
 
 au() { # extrac audio
   FILE=$1;
@@ -99,6 +99,11 @@ doc() {
   unzip -p $1 word/document.xml | sed -e 's/<[^>]\{1,\}>//g; s/[^[:print:]]\{1,\}//g'
 }
 
+wifipwd(){
+  SSID=`/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I | awk '/ SSID/ {{print substr($0, index($0, $2))}}'`
+
+  security find-generic-password -l $SSID -D 'AirPort network password' -w
+}
 
 function proxy() {
   if [[ $1 == "stop" ]] ; then
