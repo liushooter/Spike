@@ -6,8 +6,8 @@ export EDITOR=vim
 export TIME_STYLE=long-iso # --time-style=full-iso
 
 alias .="source"
-alias rb="ruby"
-alias py="python"
+alias py2="python2"
+alias py="python3"
 alias py3="python3"
 alias cdiff="colordiff" # http://www.colordiff.org/
 alias vdiff=vimdiff
@@ -21,7 +21,7 @@ alias note="jupyter notebook"
 #alias server='ruby -run -e httpd . -b127.0.0.1 -p3000'
 alias server="python3 -m http.server" # python -m SimpleHTTPServer
 alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias ipcn="curl https://ip.cn"
+
 alias now="date '+%Y-%m-%d %H:%M:%S' "
 alias utc="date +%s"
 function t_at(){date -r $1  +"%Y-%m-%d %H:%M:%S"};
@@ -43,15 +43,18 @@ alias gps="exiftool -gpslatitude -gpslongitude -gpsaltitude -Make -filename -n -
 
 alias macaddr="ifconfig en0 | awk '/ether/{print $2}'"
 
+rank(){
+  du -d $1 | sort -nr | cut -f2- | xargs du -hs
+}
+
+rot13(){
+  echo $1 | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+}
+
 au() { # extrac audio
   FILE=$1;
   FILENAME=${FILE%%.*};
   ffmpeg -i $1 -vn -acodec copy $FILENAME.aac
-}
-
-ip(){
-  ifconfig | grep 'inet ' | grep -v '127.0.0.1' | head -n1 | awk '{print $2}' | cut -d ':' -f2
-  # ifconfig | grep inet | grep -v inet6 | cut -d" " -f2 | tail -n1
 }
 
 len(){
@@ -99,24 +102,19 @@ doc() {
   unzip -p $1 word/document.xml | sed -e 's/<[^>]\{1,\}>//g; s/[^[:print:]]\{1,\}//g'
 }
 
+ip(){
+  ifconfig | grep 'inet ' | grep -v '127.0.0.1' | head -n1 | awk '{print $2}' | cut -d ':' -f2
+  # ifconfig | grep inet | grep -v inet6 | cut -d" " -f2 | tail -n1
+}
+
 wifipwd(){
   SSID=`/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I | awk '/ SSID/ {{print substr($0, index($0, $2))}}'`
 
   security find-generic-password -l $SSID -D 'AirPort network password' -w
 }
 
-function proxy() {
-  if [[ $1 == "stop" ]] ; then
-    export http_proxy=
-    export https_proxy=
-  elif [[ $1 == "test" ]] ; then
-    curl ip.gs
-    # curl ip.sb
-  else
-    export http_proxy='http://127.0.0.1:7890'
-    export https_proxy='http://127.0.0.1:7890'
-    export all_proxy='socks5://127.0.0.1:7891'
-  fi
+function mk() {
+  mkdir -p "$@" && cd "$@"
 }
 
 if [[ `uname` == 'Darwin' ]]; then
@@ -130,11 +128,6 @@ if [[ `uname` == 'Darwin' ]]; then
   bindkey '^R' history-incremental-search-backward # https://unix.stackexchange.com/a/30169
 
   alias -s gz="tar -xzvf"
-  alias pwdc="pwd | pbcopy"
+  alias pwdc="pwd | tee >(pbcopy)"
   alias cp_ssh_pub="[[ -f ~/.ssh/id_rsa.pub ]] && cat ~/.ssh/id_rsa.pub | pbcopy && echo 'id_rsa.pub cp ok' "
-
-  ncode () {
-    VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCodeInsiders" --args $* ;
-  }
-
 fi
