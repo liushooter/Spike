@@ -38,10 +38,11 @@ alias netp="netstat -tulan"  # 查看服务器端口连接信息
 # http://seanlook.com/2014/03/09/linux-bash/
 
 alias ag="ag -i"
-
 alias gps="exiftool -gpslatitude -gpslongitude -gpsaltitude -Make -filename -n -T"
-
 alias macaddr="ifconfig en0 | awk '/ether/{print $2}'"
+
+alias dir="ls -d */"
+alias hidden="ls -ld .*" # https://linuxhandbook.com/display-only-hidden-files/
 
 rank(){
   du -d $1 | sort -nr | cut -f2- | xargs du -hs
@@ -107,10 +108,9 @@ ip(){
   # ifconfig | grep inet | grep -v inet6 | cut -d" " -f2 | tail -n1
 }
 
-wifipwd(){
-  SSID=`/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I | awk '/ SSID/ {{print substr($0, index($0, $2))}}'`
-
-  security find-generic-password -l $SSID -D 'AirPort network password' -w
+function proxy() {
+  export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890
+  echo "proxy"
 }
 
 function mk() {
@@ -130,4 +130,13 @@ if [[ `uname` == 'Darwin' ]]; then
   alias -s gz="tar -xzvf"
   alias pwdc="pwd | tee >(pbcopy)"
   alias cp_ssh_pub="[[ -f ~/.ssh/id_rsa.pub ]] && cat ~/.ssh/id_rsa.pub | pbcopy && echo 'id_rsa.pub cp ok' "
+
+  alias relief="xattr -d com.apple.quarantine $1 && echo 'lift the quarantine' " # delete attribute quarantine
+
+  wifipwd(){
+    SSID=`/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I | awk '/ SSID/ {{print substr($0, index($0, $2))}}'`
+
+    security find-generic-password -l $SSID -D 'AirPort network password' -w
+  }
+
 fi
