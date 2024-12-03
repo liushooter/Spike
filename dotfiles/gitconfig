@@ -1,9 +1,10 @@
 [init]
-	defaultBranch = main
+  defaultBranch = main
 [user]
   name = ''
   email = ''
 [alias]
+  cl = clone
   d = difftool
   bi = bisect
   df = diff --word-diff
@@ -11,6 +12,7 @@
   bl = blame --pretty=format:"%h"
   co = checkout
   ci = commit -m
+  review = add -p
   auth = commit -S -m # https://help.github.com/articles/signing-commits-using-gpg/
   st = status
   br = branch
@@ -24,6 +26,7 @@
   save = config --global credential.helper store
   tree = log --graph --decorate --pretty=oneline --abbrev-commit
   count = rev-list --count HEAD
+  rank = shortlog -sn --no-merges
   brname = rev-parse --abbrev-ref HEAD
   fuck = commit --allow-empty-message -m ''
   sweep = clean -fdx
