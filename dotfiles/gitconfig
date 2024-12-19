@@ -14,7 +14,7 @@
   ci = commit -m
   review = add -p
   auth = commit -S -m # https://help.github.com/articles/signing-commits-using-gpg/
-  st = status
+  st = status #-sb
   br = branch
   try = commit --amend
   sos = reset --hard @{u} #git reset --hard <remote>/<br-name>
@@ -70,14 +70,18 @@
   clean = git hawser clean %f
   smudge = git hawser smudge %f
   required = true
-[filter "lfs"]
-  clean = git lfs clean %f
-  smudge = git lfs smudge %f
-  required = true
+[credential]
+  helper = store
 [help]
   autocorrect = -1
 [http]
   sslVerify = true
 [url "https://github.com"]
-  insteadOf = git://github.com
+  insteadOf = git://github.com # https://www.jvt.me/posts/2019/03/20/git-rewrite-url-https-ssh/
   # git config --global url."https://github.com".insteadOf git://github.com
+
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
