@@ -14,17 +14,20 @@ alias vdiff=vimdiff
 alias tf="tail -f"
 alias lsd="ls -d .*"
 alias lst="stat -l -t '%F %T %z' * "
+alias pn=pnpm
 # alias lst="gls -lht"
 
 alias note="jupyter notebook"
 
 #alias server='ruby -run -e httpd . -b127.0.0.1 -p3000'
-alias server="python3 -m http.server" # python -m SimpleHTTPServer
+alias server="python3 -m http.server -b 127.0.0.1" # python -m SimpleHTTPServer
 alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
 
 alias now="date '+%Y-%m-%d %H:%M:%S' "
 alias utc="date +%s"
-function t_at(){date -r $1  +"%Y-%m-%d %H:%M:%S"};
+function t_at(){
+  date -r $1  +"%Y-%m-%d %H:%M:%S"
+}
 
 alias Red='RED="\033[0;31m"; echo -e "${RED}$1"'
 alias Green='GREEN="\033[0;32m"; echo -e "${GREEN}$1"'
@@ -43,6 +46,14 @@ alias macaddr="ifconfig en0 | awk '/ether/{print $2}'"
 
 alias dir="ls -d */"
 alias hidden="ls -ld .*" # https://linuxhandbook.com/display-only-hidden-files/
+
+seek(){
+  find . -name "$1" -type d -prune | xargs du -chs
+}
+
+_risk(){
+  find . -name "$1" -type d -prune | xargs rm -rf
+}
 
 rank(){
   du -d $1 | sort -nr | cut -f2- | xargs du -hs
@@ -118,6 +129,14 @@ function mk() {
 }
 
 if [[ `uname` == 'Darwin' ]]; then
+
+  function _notify() {
+    # https://apple.stackexchange.com/a/303290
+    local notification_command="display notification \"$2\" with title \"$1\""
+    osascript -e "$notification_command"
+  }
+  alias alert="_notify $1 $2"
+
  # bindkey -v # vi 模式
   bindkey '^w' backward-kill-word
   bindkey '^d' delete-char
@@ -131,7 +150,7 @@ if [[ `uname` == 'Darwin' ]]; then
   alias pwdc="pwd | tee >(pbcopy)"
   alias cp_ssh_pub="[[ -f ~/.ssh/id_rsa.pub ]] && cat ~/.ssh/id_rsa.pub | pbcopy && echo 'id_rsa.pub cp ok' "
 
-  alias relief="xattr -d com.apple.quarantine $1 && echo 'lift the quarantine' " # delete attribute quarantine
+  alias revoke="xattr -d com.apple.quarantine $1 " # delete attribute quarantine
 
   wifipwd(){
     SSID=`/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I | awk '/ SSID/ {{print substr($0, index($0, $2))}}'`
