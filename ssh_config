@@ -1,0 +1,11 @@
+Host github.com
+  User git
+  UseKeychain yes
+  AddKeysToAgent yes
+  IdentityFile ~/.ssh/github_ed25519
+  ProxyCommand nc -X 5 -x 127.0.0.1:xxxx %h %p
+
+Host shooter
+  HostName 1.1.1.1
+  User shooter
+  ForwardAgent yes
