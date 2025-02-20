@@ -129,6 +129,8 @@ function mk() {
 }
 
 if [[ `uname` == 'Darwin' ]]; then
+  # alias pwdc="pwd | tee >(pbcopy)"
+  alias cpwd="pwd | tr -d '\n' | pbcopy && echo 'pwd copied to clipboard'"
 
   function _notify() {
     # https://apple.stackexchange.com/a/303290
@@ -147,8 +149,6 @@ if [[ `uname` == 'Darwin' ]]; then
   bindkey '^R' history-incremental-search-backward # https://unix.stackexchange.com/a/30169
 
   alias -s gz="tar -xzvf"
-  alias pwdc="pwd | tee >(pbcopy)"
-  alias cp_ssh_pub="[[ -f ~/.ssh/id_rsa.pub ]] && cat ~/.ssh/id_rsa.pub | pbcopy && echo 'id_rsa.pub cp ok' "
 
   alias revoke="xattr -d com.apple.quarantine $1 " # delete attribute quarantine
 
