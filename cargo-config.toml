@@ -1,0 +1,3 @@
+[alias]
+br = "build --release"
+tn = "test -- --nocapture"
