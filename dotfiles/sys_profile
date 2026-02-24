@@ -20,12 +20,13 @@ alias pn=pnpm
 alias note="jupyter notebook"
 
 #alias server='ruby -run -e httpd . -b127.0.0.1 -p3000'
-alias server="python3 -m http.server -b 127.0.0.1" # python -m SimpleHTTPServer
+alias server="python3 -m http.server -b 0.0.0.0" # python -m SimpleHTTPServer
 alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
 
 alias now="date '+%Y-%m-%d %H:%M:%S' "
 alias utc="date +%s"
-function t_at(){
+
+function tat(){
   date -r $1  +"%Y-%m-%d %H:%M:%S"
 }
 
@@ -40,7 +41,7 @@ alias psg="\ps aux | grep"
 alias netp="netstat -tulan"  # 查看服务器端口连接信息
 # http://seanlook.com/2014/03/09/linux-bash/
 
-alias ag="ag -i"
+alias ag="ag -i -Q"
 alias gps="exiftool -gpslatitude -gpslongitude -gpsaltitude -Make -filename -n -T"
 alias macaddr="ifconfig en0 | awk '/ether/{print $2}'"
 
@@ -48,7 +49,11 @@ alias dir="ls -d */"
 alias hidden="ls -ld .*" # https://linuxhandbook.com/display-only-hidden-files/
 
 seek(){
-  find . -name "$1" -type d -prune | xargs du -chs
+  find ./ -name "$1" -type d -prune | xargs du -chs
+}
+
+function dfind() {
+  find ./ -iname "*$1*" -maxdepth $2 -type d
 }
 
 _risk(){
@@ -128,18 +133,15 @@ function mk() {
   mkdir -p "$@" && cd "$@"
 }
 
+function encrypt() {
+  openssl enc -aes-256-cbc -salt -pbkdf2 -in $1 -out $2
+}
+
+# bin
+export PATH="$HOME/.local/bin:$PATH"
+
 if [[ `uname` == 'Darwin' ]]; then
-  # alias pwdc="pwd | tee >(pbcopy)"
-  alias cpwd="pwd | tr -d '\n' | pbcopy && echo 'pwd copied to clipboard'"
-
-  function _notify() {
-    # https://apple.stackexchange.com/a/303290
-    local notification_command="display notification \"$2\" with title \"$1\""
-    osascript -e "$notification_command"
-  }
-  alias alert="_notify $1 $2"
-
- # bindkey -v # vi 模式
+  # bindkey -v # vi 模式
   bindkey '^w' backward-kill-word
   bindkey '^d' delete-char
   bindkey '^u' backward-kill-line #zsh ctrl-u not work
@@ -148,14 +150,24 @@ if [[ `uname` == 'Darwin' ]]; then
   bindkey '^b' backward-char
   bindkey '^R' history-incremental-search-backward # https://unix.stackexchange.com/a/30169
 
+  alias pcp="pwd | tr -d '\n' | pbcopy && echo 'pwd copied to clipboard'"
+
+  function _notify() {
+    # https://apple.stackexchange.com/a/303290
+    local notification_command="display notification \"$2\" with title \"$1\""
+    osascript -e "$notification_command"
+  }
+  alias alert="_notify $1 $2"
+
   alias -s gz="tar -xzvf"
 
-  alias revoke="xattr -d com.apple.quarantine $1 " # delete attribute quarantine
+  alias allow="xattr -d com.apple.quarantine $1 " # delete attribute quarantine
 
   wifipwd(){
     SSID=`/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I | awk '/ SSID/ {{print substr($0, index($0, $2))}}'`
 
     security find-generic-password -l $SSID -D 'AirPort network password' -w
+    # wdutil
   }
 
 fi
