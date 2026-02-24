@@ -5,6 +5,9 @@ export LC_ALL=en_US.UTF-8
 export EDITOR=vim
 export TIME_STYLE=long-iso # --time-style=full-iso
 
+# bin
+export PATH="$HOME/.local/bin:$PATH"
+
 alias .="source"
 alias py2="python2"
 alias py="python3"
@@ -136,9 +139,6 @@ function mk() {
 function encrypt() {
   openssl enc -aes-256-cbc -salt -pbkdf2 -in $1 -out $2
 }
-
-# bin
-export PATH="$HOME/.local/bin:$PATH"
 
 if [[ `uname` == 'Darwin' ]]; then
   # bindkey -v # vi 模式
